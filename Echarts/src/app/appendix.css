@@ -2,3 +2,27 @@
 
 }
 */
+
+
+/*background: color image repeat attachment position
+
+背景图像的定位: center/left/right  (% %) (pos pos) 
+*/
+
+
+
+/*
+z轴垂直屏幕，x轴水平方向，y轴垂直于x轴
+设置为x旋转时，可以尝试 当前块元素的perpective：400px，=》“透视效果”
+transform:rotateX(90deg);
+transform:rotateY();
+transform:rotateZ(1turn);
+transform:translateX(10px)
+
+
+动画的基本使用：
+先定义好动画
+再调用定义好的动画
+div{
+    transform:rotatez(40deg) translate(200px);
+}

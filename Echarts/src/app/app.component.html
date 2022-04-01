@@ -10,6 +10,7 @@
 
   <div class="grid_item1">
     <div class="item1">
+      < svg width:525 ,height:425;  xmlns:"/assets/">
       <span class="title">订单统计</span>
       <div class="order_list">
         <ul class="order_listcol1">
@@ -26,16 +27,29 @@
         </ul>
       </div>
        <app-order-line-chart></app-order-line-chart>
-    </div>
-
+    
+  </>
+</div>
   </div>
 
   <div class="grid_item2">
 
     <!--地球-->
     <div class="item2">
-      <img style="width:108%;height:130%; margin-left:-38px;margin-top:-25px;"
-      src="/assets/images/地球@2x.png">
+    <!--<img style="width:108%;height:130%; margin-left:-38px;margin-top:-25px;"
+      src="/assets/images/地球@2x.png">-->
+  
+      <!--层叠，不动的作为背景，动的作为图片插入-->
+    
+     <img style="width:765px;height:335px; margin-left:-37px;margin-top:255px; position:absolute"
+      src="/assets/images/底托@2x.png">
+      <!--虚线逆时针  -->
+      <img id="outside" style="width:
+      488px;height:487px;" src="/assets/images/外虚线圆@2x.png" >
+      <!--内圈顺时针-->
+     <img id="inside" style="width:441px;height:441px;" src="/assets/images/内圈 @2x.png">
+    <img  id="earth" style="width:505px;height:478px;" src="/assets/images/中心地球@2x.png">
+   
     </div>
 
   </div>
@@ -48,6 +62,7 @@
 
     <div class="item3_1">
       <span class="title">产品记录</span>
+      <app-record-gauge-chart></app-record-gauge-chart>
     </div>
     <!--生产任务-->
     <div class="item3_2">
@@ -67,7 +82,7 @@
     <!--生产展示-->
     <div class="item3_3">
       <span class="title">生产展示</span>
-      
+      <app-production-bar-chart></app-production-bar-chart>
     </div>
 
   </div>
@@ -77,6 +92,8 @@
 
     <div class="item4">
       <span class="title" style="position:relative;left:5px;">订单数量</span>
+      <app-issue-total-bar-chart></app-issue-total-bar-chart>
+      <app-issue-top5-bar-chart></app-issue-top5-bar-chart>
     </div>
 
   </div>
@@ -86,6 +103,13 @@
     <!--各车间生产统计-->
     <div class="item7">
       <span class="title">各车间生产统计</span>
+     
+      <img src="/assets/images/圆柱体 3.png">
+      <img src="/assets/images/圆柱体2.png">
+      <img src="/assets/images/圆柱体.png">
+      <img src="/assets/images/圆柱体1.png">
+      <img src="/assets/images/圆柱体4.png">
+    
     </div>
 
   </div>

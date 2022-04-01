@@ -17,7 +17,7 @@
    grid-template-rows:repeat(2,1fr);
    grid-auto-rows: minmax(460px,auto);
    grid-auto-columns:minmax(525px,auto);
-    grid-gap: 4px;
+   /* grid-gap: 4px;*//*地球背景两边指向*/
    /* border:2px dotted white;*/
     width:100%;
     height:90%;
@@ -49,7 +49,7 @@
 .item1{
    width: 535px;
    height:455px;
-   margin-left:54px;
+   margin-left:45px;
    margin-top:-5px;
    background-image:url("/assets/images/矢量智能对象2.png") ;
    background-repeat: no-repeat;
@@ -63,9 +63,17 @@
 }
 
 .item2{
-
-width:677px;
+   
+width:690px;
 height:500px;
+}
+/*
+background-image:url("/assets/images/地球底托@2x.png")  ;
+background-repeat:no-repeat ;
+background-position:bottom ;
+background-size:/*80% 70%;
+ }*/
+/*background-blend-mode: overlay;*/
 /*background-image:url("/assets/images/地球@2x.png");
 background-repeat: no-repeat;
 background-size:100% 110%;*/
@@ -73,11 +81,14 @@ background-size:100% 110%;*/
 /*图片像素大小
 height:762px;  
 width: 683px;*/
-}
 
+
+
+/*
 .item3{
 
-}
+}*/
+
 
 .item4{
 /*height:430px;
@@ -89,7 +100,7 @@ position:relative;
 top:-30px;
 width: 535px;
 height:415px;
-margin-left:54px;
+margin-left:45px;
 padding:4px;
 }
 
@@ -151,8 +162,10 @@ margin-top:20px;
 
 .title{
 color:#81E8FE;
-
 position:relative;
+display:block;
+font-size: 18px;
+top:-0.5em;
 /*top:-0.5em;
 left:-14em
 */
@@ -171,7 +184,9 @@ ul{
     padding:0px; 
 }
 ul.order_listcol1{
-list-style-image:url('/assets/images/矢量智能对象.png')
+list-style-image:url('/assets/images/矢量智能对象.png');
+margin-left:31px;
+margin-top:66px;
 }
 ul.order_listcol2{
     list-style-image:url('/assets/images/矢量智能对象(1).png')
@@ -180,6 +195,7 @@ ul.order_listcol3{
     list-style-image:url('/assets/images/矢量智能对象(2).png')
 }
 li{
+    font-size: 14px;
     color:white;
     padding:7px;
 }
@@ -224,6 +240,59 @@ span.data_block{
     margin-right:20px;
     position:relative;
     top: -60px;
+}
+
+.item7 >img{
+display: inline-block;
+margin-top: 20px;
+margin-left:20px;
+}
+
+@keyframes clockwise {
+    from{ransform-origin:center;transform:rotateZ(0deg)}
+    to{transform:rotateZ(360deg);}
+}/*3D*/
+@keyframes anti-clockwise{
+    from{transform:rotate3d(0,0,1,0deg);}
+    to{transform:rotate3d(0,0,1,-360deg);}
+}/*2D*/
+
+img#outside{
+    position: relative;
+    z-index:1;
+    left: 102px;
+    top: 14px;
+animation:clockwise 10s infinite linear;
+transform-origin:center ;
+/*transform-box: fill-box;*/
+}
+
+img#inside{
+    position:relative;
+    bottom: 454px;
+    left: 123px;
+    Z-index:2;
+animation:anti-clockwise 10s infinite linear;
+transform-origin:center;
+/*transform-box:fill-box;*/
+}
+
+
+img#earth{
+    position:relative;
+    bottom:170%
+    ;
+    left:80px;
+}
+img#left{
+    position:relative;
+    bottom:253%;
+    left:-5%;
+}
+img#right{
+    position:relative;
+    bottom:253%;
+    right:-52%;
 }
 
 /*

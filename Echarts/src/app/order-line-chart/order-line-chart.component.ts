@@ -1,3 +1,4 @@
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 @Component({
@@ -46,14 +47,16 @@ export class OrderlineChartComponent implements OnInit {
         axisTick: {
           show: false,
         },
+        axisLabel:{
+          show: true,
+          color:'#FFFFFF',
+        },
         data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月'],
       },
 
-      yAxis: {
+      yAxis:[ {
         type: 'value',
-        name: '单位（万件)',
-        position: 'left',
-        nameLocation: 'end',
+        position: 'left',   /*count*/
         nameTextStyle: {
           color: '#FFFFFF',
           fontStyle: 'normal',
@@ -69,9 +72,10 @@ export class OrderlineChartComponent implements OnInit {
         // splitNumber:1,
         interval: 1,
         min: 0,
-        max: 5,
+        max: 5,              /*count*/
         axisLabel: {
           show: true,
+          color:'#FFFFFF',
         },
         splitLine: {
           lineStyle: {
@@ -79,8 +83,17 @@ export class OrderlineChartComponent implements OnInit {
           },
         },
       },
+    {
+    type:'value',
+     name:'单位（万件）',
+     nameTextStyle:{
+       align:'right',
+       color: '#FFFFFF',
+     }
+    }
+    ],
       grid: {
-        width: '385',
+        width: '420',
         height: '130',
       },
 

@@ -10,6 +10,9 @@ import { OrderlineChartComponent } from './order-line-chart/order-line-chart.com
 import { ProductionBarChartComponent } from './production-bar-chart/production-bar-chart.component';
 import { OrderBarChartComponent } from './order-bar-chart/order-bar-chart.component';
 import { PeriodplanLineChartComponent } from './periodplan-line-chart/periodplan-line-chart.component';
+import { IssueTOP5BarChartComponent } from './issue-top5-bar-chart/issue-top5-bar-chart.component';
+import { IssueTotalBarChartComponent } from './issue-total-bar-chart/issue-total-bar-chart.component';
+import { RecordGaugeChartComponent } from './record-gauge-chart/record-gauge-chart.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { PeriodplanLineChartComponent } from './periodplan-line-chart/periodplan
     ProductionBarChartComponent,
     OrderBarChartComponent,
     PeriodplanLineChartComponent,
+    IssueTOP5BarChartComponent,
+    IssueTotalBarChartComponent,
+    RecordGaugeChartComponent,
   ],
   imports: [
    BrowserModule,

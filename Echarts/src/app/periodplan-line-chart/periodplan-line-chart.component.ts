@@ -4,7 +4,7 @@ import * as echarts from 'echarts';
   selector: 'app-periodplan-line-chart',
   template: `<div
     id="periodplan_line_chart"
-    style="width:565px;height:110px"
+    style="width:565px;height:120px"
   ></div>`,
   styleUrls: ['./periodplan-line-chart.component.css'],
 })
@@ -19,14 +19,14 @@ export class PeriodplanLineChartComponent implements OnInit {
     let linechart = ec.init(document.getElementById('periodplan_line_chart'));
     let periodplan_linechartOption = {
       grid: {
-        top: 8,
+        top: 9,
         /*left: 8,*/
         /*right: 15,*/
         height: 85,
-        width: 441,
+        width: 443,
       },
       xAxis: {
-        type: 'category',
+        type: 'category',//type:'time',
         boundaryGap: false,
         data: [
           '2020-01',
