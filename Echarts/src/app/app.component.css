@@ -1,29 +1,30 @@
 .col-md-12{
-    background-image:url("/assets/images/标题.png");
+    background-image:url("/assets/images/标题@2x(modified).png");
     background-size:cover;
     background-repeat: no-repeat;
-    background-position: left top ;
-   /* background-size:88% 390%;*/
     background-origin: border-box;
-    /*text-align:center;*/
+    background-position: left top ;
     width: 100%;
-    height:110px;
-    position: absolute;/*?*/
+    height:112px;
+    margin:auto;
+    /*?*/
 }
 
 .grid-container{
    display: grid;
    grid-template-columns:repeat(3,1fr);
    grid-template-rows:repeat(2,1fr);
-   grid-auto-rows: minmax(460px,auto);
+   grid-auto-rows: minmax(425px,auto);      /*应该让所有的flex适应425px*/
    grid-auto-columns:minmax(525px,auto);
-   /* grid-gap: 4px;*//*地球背景两边指向*/
-   /* border:2px dotted white;*/
-    width:100%;
-    height:90%;
-    position: relative;
-    top:120px;
+   grid-row-gap: 25px;
+   grid-column-gap:15px;
    box-sizing:border-box;
+   padding-left:56px;
+   padding-right:56px;
+   /* border:2px dotted white;*/
+   /* width:100%;
+    height:90%;
+    position: relative;*/
   /* grid-template-areas: 
    'grid_item1,grid_item2,grid_item3'
    'grid_item4,grid_item5,grid_item6';
@@ -31,39 +32,36 @@
 }
 
 
-
-.col{
-    text-align: center;
-}
-
-
 .title_logo{
     position:relative;
-    top:20%;
-    left:36%;
-    width:535px;
+    top:20px;
+    left:3px;
+    width:510px;
     height:67px;
-
+    margin:auto;/*内部元素（块）居中对齐*/
 }
 
-.item1{
-   width: 535px;
-   height:455px;
-   margin-left:45px;
-   margin-top:-5px;
-   background-image:url("/assets/images/矢量智能对象2.png") ;
-   background-repeat: no-repeat;
+.grid_item1{
+   display:flex;
+   flex-direction:column;
+   width: 532px;       /*边框尺寸*/
+   height:425px;
+   box-sizing:content-box;
+   background:
+url("/assets/images/矢量智能对象2.png") no-repeat;
+   background-size:contain;
+   /*url("/assets/images/矢量智能对象2.png") no-repeat contain top,*/
+   /*background-repeat: no-repeat;
    background-size:contain;
    background-position:top;
-   position:relative;
-   padding:4px;/*需要加入蒙版*/
-   /*box-sizing:border-box;*/
+   position:relative;*/
    /*grid-column:1/2;*/
 
 }
 
-.item2{
-   
+.grid_item2{
+display:flex;
+flex-direction: column;
 width:690px;
 height:500px;
 }
@@ -82,55 +80,66 @@ background-size:100% 110%;*/
 height:762px;  
 width: 683px;*/
 
+.grid_item3{
+display:flex;
+flex-direction: column;
+width:525px;
+height:430px;
 
-
-/*
-.item3{
-
-}*/
-
-
-.item4{
-/*height:430px;
-width:532px;*/
-background-image:url("/assets/images/矢量智能对象2.png") ;
-background-repeat: no-repeat;
-background-size:100% 100%;
-position:relative;
-top:-30px;
-width: 535px;
-height:415px;
-margin-left:45px;
-padding:4px;
 }
 
+.grid_item4{
+display:flex;
+flex-direction:column;
+height:435px;
+width:532px;
+background-image:url("/assets/images/矢量智能对象2.png") ;
+background-repeat: no-repeat;
+margin-top:-50px;
+
+}
+
+.grid_item5{
+display:flex;
+flex-direction:column;
+height:430px;
+width:532px;
+}
+
+.grid_item6{
+display:flex;
+flex-direction:column;
+height:430px;
+width:532px;
+}
 
 .item3_1{
 background-image:url("/assets/images/右下边框.png");
 background-repeat: no-repeat;
 background-size:100% 100%;
-width:565px;
-height:120px;
+width:525px;
+height:125px;
 }
 .item3_2{
 background-image:url("/assets/images/右下边框.png");
 background-repeat: no-repeat;
 background-size:100% 100%;
-width:565px;
-height:120px;
-margin-top:20px;
-
+width:525px;
+height:115px;
+margin-top:30px;
 }
 .item3_3{
 background-image:url("/assets/images/右下边框.png");
 background-repeat: no-repeat;
 background-size:100% 100%;
-width:565px;
+width:525px;
 height:170px;
-margin-top:20px;
+margin-top:30px;
 }
 
 .item7{
+  
+    flex-direction:column;
     background-image:url("/assets/images/矢量智能对象2.png");
     background-repeat: no-repeat;
     background-size:100% 100%;
@@ -143,50 +152,50 @@ margin-top:20px;
     }
     
 .item8{
+   
+    flex-direction:column;
     background-image:url("/assets/images/右下边框.png");
     background-repeat: no-repeat;
     background-size:100% 100%;
-    width:565px;
+    width:525px;
     height:230px; /*temporary*/
     margin-bottom:25px;
     margin-top:-20px;
 }
 
 .item9{
+    
     background-image:url("/assets/images/右下边框.png");
     background-repeat: no-repeat;
     background-size:100% 100%;
-    width:565px;
+    width:525px;
     height:159px;
 }
 
 .title{
 color:#81E8FE;
+font-size:1.125em;
 position:relative;
-display:block;
-font-size: 18px;
-top:-0.5em;
+top:-1.5em;
 /*top:-0.5em;
 left:-14em
 */
 
 }
 .order_list{
-position:relative;
-top:-50px;
-left:10px;
+box-sizing: content-box;
+padding-left:30px;
+padding-right:30px;
+
 }
 /*将块元素变成行内元素*/
 ul{
     display:inline-block;
-    margin-left:31px;
-    margin-top:66px;
-    padding:0px; 
+  /*  margin-left:30px;*/
 }
 ul.order_listcol1{
-list-style-image:url('/assets/images/矢量智能对象.png');
-margin-left:31px;
-margin-top:66px;
+list-style-image:url("/assets/images/矢量智能对象.png");
+
 }
 ul.order_listcol2{
     list-style-image:url('/assets/images/矢量智能对象(1).png')
@@ -210,7 +219,7 @@ span.data_block{
 
 .task_listcol1 {
     display:inline-block;
-    list-style-image:url('/assets/images/矢量智能对象(3).png');
+    list-style-image:url("/assets/images/矢量智能对象(3).png");
     margin-left:30px;/*百分数?*/
     margin-right:20px;
     position:relative;
@@ -219,7 +228,7 @@ span.data_block{
 }
 .task_listcol2{
     display:inline-block;
-    list-style-image:url('/assets/images/矢量智能对象(4).png');
+    list-style-image:url("/assets/images/矢量智能对象(4).png");
     margin-left:30px;
     margin-right:20px;
     position:relative;
@@ -227,7 +236,7 @@ span.data_block{
 }
 .task_listcol3{
    display:inline-block;
-   list-style-image:url('/assets/images/矢量智能对象(5).png'); 
+   list-style-image:url("/assets/images/矢量智能对象(5).png"); 
    margin-left:30px;
    margin-right:20px;
    position:relative;
@@ -235,7 +244,7 @@ span.data_block{
 }
 .task_listcol4{
     display:inline-block;
-    list-style-image:url('/assets/images/矢量智能对象(6).png');
+    list-style-image:url("/assets/images/矢量智能对象(6).png");
     margin-left:30px;
     margin-right:20px;
     position:relative;

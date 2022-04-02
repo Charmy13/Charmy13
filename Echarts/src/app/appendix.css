@@ -11,6 +11,8 @@
 
 
 
+
+
 /*
 z轴垂直屏幕，x轴水平方向，y轴垂直于x轴
 设置为x旋转时，可以尝试 当前块元素的perpective：400px，=》“透视效果”
@@ -26,3 +28,19 @@ transform:translateX(10px)
 div{
     transform:rotatez(40deg) translate(200px);
 }
+
+/*振淼：
+标题：    18px    =1.125em
+内部字体：14px    约1.143em
+
+*/
+
+/*网格线
+background-color: #000E3E;
+background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(360deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 1px);
+background-size: 80px 80px;
+background-repeat: repeat;
+background-position:center center;
+*/
+
+

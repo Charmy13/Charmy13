@@ -1,17 +1,16 @@
 <!--标题-->
 <div class="col-md-12">
   <div class="title_logo">
-    <img style="width:100%;height:100%; "
+    <img style="width:100%;height:100%;"
       src="/assets/images/新云平台数据统计分析.png">
   </div>
 </div>
 
 <div class="grid-container">
 
-  <div class="grid_item1">
-    <div class="item1">
-      < svg width:525 ,height:425;  xmlns:"/assets/">
-      <span class="title">订单统计</span>
+    <div class="grid_item1">
+      <p class="title">订单统计</p>
+     
       <div class="order_list">
         <ul class="order_listcol1">
           <li>今日受理:<span class="data">1659</span></li>
@@ -27,15 +26,14 @@
         </ul>
       </div>
        <app-order-line-chart></app-order-line-chart>
+    </div>
     
-  </>
-</div>
-  </div>
+  
 
-  <div class="grid_item2">
+  
 
     <!--地球-->
-    <div class="item2">
+    <div class="grid_item2">
     <!--<img style="width:108%;height:130%; margin-left:-38px;margin-top:-25px;"
       src="/assets/images/地球@2x.png">-->
   
@@ -52,7 +50,7 @@
    
     </div>
 
-  </div>
+  
 
   <div class="grid_item3">
 
@@ -61,12 +59,12 @@
 
 
     <div class="item3_1">
-      <span class="title">产品记录</span>
+      <p class="title">产品记录</p>
       <app-record-gauge-chart></app-record-gauge-chart>
     </div>
     <!--生产任务-->
     <div class="item3_2">
-      <span class="title">生产任务</span>
+      <p class="title">生产任务</p>
       <div class="task_display">
         <ul>
           <li class="task_listcol1">我的处理<span class="data_block">26件</span></li>
@@ -81,28 +79,28 @@
 
     <!--生产展示-->
     <div class="item3_3">
-      <span class="title">生产展示</span>
+      <p class="title">生产展示</p>
       <app-production-bar-chart></app-production-bar-chart>
     </div>
 
   </div>
 
-  <div class="grid_item4">
+ 
     <!--订单数量-->
 
-    <div class="item4">
+    <div class="grid_item4">
       <span class="title" style="position:relative;left:5px;">订单数量</span>
       <app-issue-total-bar-chart></app-issue-total-bar-chart>
       <app-issue-top5-bar-chart></app-issue-top5-bar-chart>
     </div>
 
-  </div>
+  
 
-  <div class="grid_item5">
+ <div class="girid_item5">
 
     <!--各车间生产统计-->
     <div class="item7">
-      <span class="title">各车间生产统计</span>
+      <p class="title">各车间生产统计</p>
      
       <img src="/assets/images/圆柱体 3.png">
       <img src="/assets/images/圆柱体2.png">
@@ -111,28 +109,29 @@
       <img src="/assets/images/圆柱体4.png">
     
     </div>
-
   </div>
+  
 
-  <div class="grid_item6">
+<div class="grid_item6">
     <!--生产产品统计-->
 
     <div class="item8">
-      <span class="title">生产产品统计</span>
+      <p class="title">生产产品统计</p>
       <app-piechart></app-piechart>
     </div>
 
 
     <!--周期计划管理-->
     <div class="item9">
-      <span class="title">周期计划管理</span>
+      <p class="title">周期计划管理</p>
       <app-periodplan-line-chart></app-periodplan-line-chart>
     </div>
   </div>
 
-
-
 </div>
+
+
+
 
 
 
