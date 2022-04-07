@@ -9,77 +9,70 @@
 <div class="grid-container">
 
     <div class="grid_item1">
-      <p class="title">订单统计</p>
-     
-      <div class="order_list">
-        <ul class="order_listcol1">
-          <li>今日受理:<span class="data">1659</span></li>
-          <li>累计受理:<span class="data">18800</span></li>
-        </ul>
-        <ul class="order_listcol2">
-          <li>今日办结:<span class="data">1519</span></li>
-          <li>累计办结:<span class="data">16059</span></li>
-        </ul>
-        <ul class="order_listcol3">
-          <li>办结率:<span class="data">98.26%</span> </li>
-          <li>办结率:<span class="data">97.26%</span></li>
-        </ul>
-      </div>
+      <p  class="title">订单统计</p>
+     <app-order-list-chart></app-order-list-chart>
        <app-order-line-chart></app-order-line-chart>
     </div>
-    
-  
 
-  
-
-    <!--地球-->
+    <!--地球。中心-->
     <div class="grid_item2">
-    <!--<img style="width:108%;height:130%; margin-left:-38px;margin-top:-25px;"
-      src="/assets/images/地球@2x.png">-->
-  
-      <!--层叠，不动的作为背景，动的作为图片插入-->
-    
-     <img style="width:765px;height:335px; margin-left:-37px;margin-top:255px; position:absolute"
-      src="/assets/images/底托@2x.png">
-      <!--虚线逆时针  -->
-      <img id="outside" style="width:
-      488px;height:487px;" src="/assets/images/外虚线圆@2x.png" >
+      <img  id="earth" src="/assets/images/中心地球@2x.png">
       <!--内圈顺时针-->
-     <img id="inside" style="width:441px;height:441px;" src="/assets/images/内圈 @2x.png">
-    <img  id="earth" style="width:505px;height:478px;" src="/assets/images/中心地球@2x.png">
-   
+     <img id="inside"  src="/assets/images/内圈 @2x.png">
+     <!--虚线逆时针  -->
+     <img id="outside"  src="/assets/images/外虚线圆@2x.png" >
+     <!--层叠，不动的作为背景，动的作为图片插入-->
+     <img style="width:755px;height:340px;position:absolute; left:580px;top:360px; z-index:3"
+      src="/assets/images/底托@2x.png">
+     <div class="center_title">
+       <h2>订单总数</h2>
+       <p>4800</p>
+       
+
+     </div>
     </div>
 
   
 
   <div class="grid_item3">
 
-
+    
     <!--产品记录-->
-
-
     <div class="item3_1">
       <p class="title">产品记录</p>
+      <span p class="total">99.3<i style="font-size:0.7em;font-weight:bold; font-style:normal">%</i> </span>
       <app-record-gauge-chart></app-record-gauge-chart>
     </div>
     <!--生产任务-->
     <div class="item3_2">
       <p class="title">生产任务</p>
-      <div class="task_display">
-        <ul>
-          <li class="task_listcol1">我的处理<span class="data_block">26件</span></li>
-          <li class="task_listcol2">处理完成<span class="data_block">278件</span></li>
-          <li class="task_listcol3">未达产品码<span class="data_block">13件</span></li>
-          <li class="task_listcol4">其他<span class="data_block">8件</span></li>
-        </ul>
+      <div class="task">
         
+        <div>
+           <img src='/assets/images/矢量智能对象(3).png'>
+           <p>我的处理</p><span class="data_block">26</span>件 
+        </div>
+
+        <div >
+            <img src='/assets/images/矢量智能对象(4).png'>
+            <p>处理完成</p><span class="data_block">278</span>件
+        </div>
+          <div >
+          <img src='/assets/images/矢量智能对象(5).png'>
+          <p>未达产品码</p> <span class="data_block">13</span>件 
+            
+        </div>
+        <div >
+          <img src="/assets/images/矢量智能对象(6).png">
+          <p> 其他</p><span class="data_block">8</span>件 
+        </div>
       </div>
+    
+     
     </div>
-
-
     <!--生产展示-->
     <div class="item3_3">
-      <p class="title">生产展示</p>
+      <p  class="title">生产展示</p>
       <app-production-bar-chart></app-production-bar-chart>
     </div>
 
@@ -87,27 +80,31 @@
 
  
     <!--订单数量-->
-
     <div class="grid_item4">
-      <span class="title" style="position:relative;left:5px;">订单数量</span>
+      <p class="title" >订单数量</ p>
       <app-issue-total-bar-chart></app-issue-total-bar-chart>
       <app-issue-top5-bar-chart></app-issue-top5-bar-chart>
     </div>
 
-  
-
- <div class="girid_item5">
-
+ <div class="grid_item5">
+  <p class="title">各车间生产统计</p>
     <!--各车间生产统计-->
     <div class="item7">
-      <p class="title">各车间生产统计</p>
-     
-      <img src="/assets/images/圆柱体 3.png">
-      <img src="/assets/images/圆柱体2.png">
-      <img src="/assets/images/圆柱体.png">
-      <img src="/assets/images/圆柱体1.png">
-      <img src="/assets/images/圆柱体4.png">
-    
+      <div class="item7_1">
+        <b>一车间</b>
+      </div>
+      <div class="item7_2">
+       <b>一车间</b>
+      </div>
+      <div class="item7_3">
+        <b>一车间</b>
+      </div>
+      <div class="item7_4"> 
+        <b>一车间</b>
+      </div>
+      <div  class="item7_5">
+        <b>一车间</b>
+    </div>
     </div>
   </div>
   

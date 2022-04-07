@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 @Component({
   selector: 'app-piechart',
-  template: `<div id="piechart" style="width:565px;height:210px"></div>`,
+  template: `<div id="piechart" style="width:525px;height:200px"></div>`,
   styleUrls: ['./piechart.component.css'],
 })
 export class PiechartComponent implements OnInit {
@@ -17,125 +17,124 @@ export class PiechartComponent implements OnInit {
     const ec = echarts as any;
     let piechart = ec.init(document.getElementById('piechart'));
     let piechartOption = {
-      title: {},
+      title:{
+        text:'流转\n业务',
+        left:'31%',       
+        top:'38%',
+        textStyle:{
+          color:'rgba(255,255,255,1)',
+          fontSize:18,
+          fontWeight:10,
+          lineHeight:20,
+          
+        },
+      },
       legend: {
         icon: 'rect',
         orient: 'vertical',
-        right: '5%',
-        bottom:'8%',
-        height:190,/*图例组件高度*/
+        left: '65%',
+        
+        width:525,
+        height:200,/*图例组件高度*/
         itemWidth: 12,
         itemHeight: 11,
-        
+        itemGap:10,
+       
         textStyle:{
-          color:'#ffffff',
-         
+          color:'rgba(255,255,255,0.8)',
+           padding:[0,0,0,4],
         }
       },
-     /* toolbox: {
-    show: true,
-    feature: {
-      mark: { show: true },
-      dataView: { show: true, readOnly: false },
-      restore: { show: true },
-      saveAsImage: { show: true }
-    }
-  },数据可视化，下载刷新操作*/
+     
       series: [
         {
           name: 'Pie chart',
           type: 'pie',
-          left: '10%',
-          height:410,
-          /* height:,
-     width:,*/
-          radius: [35, 80],
-          center: ['23%', '20%'],
+           width:525,  
+           height:200,
+          radius: ['40%','85%'],
+          center: ['35%', '50%'],/*相对于容器大小而言*/
           roseType: 'radius',
-          itemStyle: {
-            borderRadius: 0,
-          },
+          clockWise:true,
+          startAngle:120,
+          minAngle:10,
           label: {
             position: 'outer' /*注意顺序*/,
-            alignTo: 'labelline',
+            alignTo: 'none',
             /*alignTo:'none',由label length 和length2而决定*/
-
-            formatter: '{name|{d}%}',
-            minMargin: 2,
-            /* edgeDistance: 20,*/
+           formatter: '{name|{d}%}',
+            minMargin:0,
             lineHeight: 15,
             rich: {
-              time: {
-                fontSize: 9,
-                color: '#999',
+              name: {
+                fontSize: 12,
+                color: 'rgba(255,255,255,0.9)',
               },
             },
           },
 
           labelLine: {
-            /*showAbove:true,引导线是否显示在图形上面?*/
-            length: 20,
-            length2: 30,
-            /*maxSurfaceAngle: 80,*/
+            showAbove:true,/*引导线是否显示在图形上面?*/
+           
             lineStyle: {
-              color: '#333',
+              color: 'rgba(255,255,255,0.9)',
             },
           },
 
           data: [
             {
-              value: 279,
-              name: '打铁座                    279',
+              value: 180,
+              name: '打铁座',      
               itemStyle: { color: '#10B9F8' },
             },
             {
               value: 177,
-              name: '顶棚线束                177',
+              name: '顶棚线束',
               itemStyle: { color: '#FF6A6A' },
             },
             {
-              value: 68,
-              name: 'POS机                     68',
+              value: 165,
+              name: 'POS机',
               itemStyle: { color: '#90ED7D' },
             },
             {
-              value: 15,
-              name: '安全带/USB电源      15',
+              value: 140,
+              name: '安全带/USB电源',
               itemStyle: { color: '#F7A35C' },
             },
             {
-              value: 14,
-              name: '车身安全带/USB      14',
+              value: 120,
+              name: '车身安全带/USB',
               itemStyle: { color: '#8085E9' },
             },
             {
-              value: 8,
-              name: '司机风扇                   8',
-              itemStyle: { color: '#8085E9' },
+              value:100,
+              name: '司机风扇',
+              itemStyle: { color: '#920783' },
             },
             {
-              value: 6,
-              name: '外推窗过渡线            6',
+              value:80,
+              name: '外推窗过渡线',
               itemStyle: { color: '#E4D354' },
             },
             {
-              value: 2,
-              name: '仪表线束                   2',
+              value: 60,
+              name: '仪表线束',
               itemStyle: { color: '#601986' },
             },
             {
-              value: 1,
-              name: '阅读灯线束                1',
+              value: 40,
+              name: '阅读灯线束',
               itemStyle: { color: '#A48B78' },
             },
           ],
         },
       ],
-    };
-    piechart.setOption(piechartOption);
+   
   }
+  piechart.setOption(piechartOption);
 }
-
+}
 /* labelLayout: function (params) {
         const isLeft = params.labelRect.x < myChart.getWidth() / 2;
         const points = params.labelLinePoints as number[][];
@@ -147,7 +146,7 @@ export class PiechartComponent implements OnInit {
         return {
           labelLinePoints: points
         };
-      },*/
+      },
 
 /*labelout 
 该配置项也可以是一个有如下参数的回调函数

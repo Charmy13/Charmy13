@@ -4,10 +4,9 @@
     background-repeat: no-repeat;
     background-origin: border-box;
     background-position: left top ;
-    width: 100%;
+    width:100%;
     height:112px;
     margin:auto;
-    /*?*/
 }
 
 .grid-container{
@@ -21,17 +20,8 @@
    box-sizing:border-box;
    padding-left:56px;
    padding-right:56px;
-   /* border:2px dotted white;*/
-   /* width:100%;
-    height:90%;
-    position: relative;*/
-  /* grid-template-areas: 
-   'grid_item1,grid_item2,grid_item3'
-   'grid_item4,grid_item5,grid_item6';
-   */
+
 }
-
-
 .title_logo{
     position:relative;
     top:20px;
@@ -44,19 +34,92 @@
 .grid_item1{
    display:flex;
    flex-direction:column;
+   justify-content:flex-start;
+   align-self:stretch;
    width: 532px;       /*边框尺寸*/
-   height:425px;
+   height:430px;
+   background:url("/assets/images/矢量智能对象2.png")  no-repeat;
+   background-size:contain;
+   background-color: 'RGBA(3, 20, 73, 1)';
+   box-shadow:0 0 212.5px 30px RGBA(19, 49, 109, 1) inset;
    box-sizing:content-box;
-   background:
-url("/assets/images/矢量智能对象2.png") no-repeat;
-   background-size:contain;
-   /*url("/assets/images/矢量智能对象2.png") no-repeat contain top,*/
-   /*background-repeat: no-repeat;
-   background-size:contain;
-   background-position:top;
-   position:relative;*/
    /*grid-column:1/2;*/
 
+}
+div.center_title{
+    position:absolute;
+    top:320px;     /*用px*/
+    left:45%;
+    text-align: center;
+    z-index:0;
+}
+div.item7_1{
+    background: url("/assets/images/圆柱体 3.png") no-repeat;
+    background-size: contain;
+    width:100px;
+    height:168px;
+    position: relative;
+   top:70px;
+    margin-left: 20px;
+}
+div.item7_2{
+    background:url("/assets/images/圆柱体2.png") no-repeat;
+    background-size: contain;
+    width:100px;
+    height:183px;
+    position: relative;
+    top:55px;
+    margin-left: 10px;
+}
+div.item7_3{
+    background:url("/assets/images/圆柱体.png") no-repeat;
+    background-size: contain;
+    width:100px;
+    height:207px;
+    position: relative;
+    top:35px;
+    margin-left: 10px;
+}
+div.item7_4{
+    background:url("/assets/images/圆柱体1.png") no-repeat;
+    background-size: contain;
+    width:100px;
+    height:187px;
+    position: relative;
+    top:50px;
+    margin-left: 10px;
+}
+div.item7_5{
+    background:url("/assets/images/圆柱体4.png") no-repeat;
+    background-size: contain;
+    width:99px;
+    height:171px;
+    position: relative;
+    top:60px;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+h2{
+    color:white ;
+    font-size:30px;
+    font-family:micorsoft yahei;
+    margin:0;
+}
+h2+p{
+    font-Size:90px;
+    font-weight:lighter;
+    background:linear-gradient(to bottom ,#22D1E5,#2AEBD5);
+   background-clip:text;
+    color:transparent;
+    font-family: fantasy;   /*字体要换*/
+    margin:0; 
+
+    
 }
 
 .grid_item2{
@@ -83,11 +146,112 @@ width: 683px;*/
 .grid_item3{
 display:flex;
 flex-direction: column;
+flex-wrap: nowrap;
+/*justify-content:space-between;*/
+align-items:baseline;
 width:525px;
 height:430px;
-
+}
+.item3_1{
+    background-image:url("/assets/images/右下边框.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    width:525px;
+    height:115px;
+    background-color: 'RGBA(3, 20, 73, 1)';
+    box-shadow:0 0 50px 10px RGBA(19, 49, 109, 1) inset;
+    
+    }
+ 
+    .item3_2{
+    width:525px;
+    height:115px;
+    background-image:url("/assets/images/右下边框.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    margin-top:25px;
+    margin-bottom:25px;
+   box-sizing: content-box;
+   background-color: 'RGBA(3, 20, 73, 1)';
+   box-shadow:0 0 50px 10px RGBA(19, 49, 109, 1) inset;
+    }
+.task{
+    width:525px;
+    height:115px;
+    margin-top:-5px;
+    }
+div.task div {
+    display:inline-block;
+    width:105px;
+    height:60px;
+    background-color:rgba(20,105,170,0.1);
+    margin-left:15px;/*百分数?*/
+    margin-top:15px;
+    padding-inline-start: 8px;
+    font-size:13px;
+    color:white;
+}
+div.task p{
+    margin:0;
+}
+.data_block{
+    color:#F8B62D;
+    font-size:18px;
+    font-weight: bold;
+    /*font-family:*/
 }
 
+div.task img{
+  float:left;
+  padding-top:10px;
+  padding-right: 10px;
+}
+
+    .item3_3{
+    background-image:url("/assets/images/右下边框.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    width:525px;
+    height:190px;
+    background-color: 'RGBA(3, 20, 73, 1)';
+    box-shadow:0 0 95px 20px RGBA(19, 49, 109, 1) inset;
+    box-sizing: content-box;
+    
+    }
+.total{
+    display: inline-block;
+    position:absolute;
+    top:150px;  /*top:158px;*/
+    left:1345px;/*left:1355px;*/
+    z-index:1;
+    font-size:2.3vw;
+    font-size:2.625em;
+    font-stretch:expanded;
+    color: #F8B62D;
+    font-weight: bold;
+    /*font-family: ;*/
+    font-style: normal;
+    
+   /* text-indent:2px;*//*文字缩进*/
+    /*letter-spacing:1px;
+    line-height:1px;
+    word-spacing:10px;*/
+   /* white-space: nowrap;*//*不换行*/
+}
+/*
+@font-face{
+    font-family:myFirstFont;
+    src:url();
+    font-stretch:condensed;
+    font-style:normal;
+    font-weight: bold;
+    unicode-range:unicode-range;
+}
+*/
+i{
+font-size:0.7em;   
+font-weight: bold;
+}
 .grid_item4{
 display:flex;
 flex-direction:column;
@@ -95,15 +259,19 @@ height:435px;
 width:532px;
 background-image:url("/assets/images/矢量智能对象2.png") ;
 background-repeat: no-repeat;
+background-color: 'RGBA(3, 20, 73, 1)';
+box-shadow:0 0 260px 40px RGBA(19, 49, 109, 1) inset;
 margin-top:-50px;
-
 }
 
 .grid_item5{
 display:flex;
 flex-direction:column;
-height:430px;
-width:532px;
+height:380px;
+width:620px;
+padding-top: 75px;
+padding-left:35px;
+padding-right:25px;
 }
 
 .grid_item6{
@@ -113,29 +281,7 @@ height:430px;
 width:532px;
 }
 
-.item3_1{
-background-image:url("/assets/images/右下边框.png");
-background-repeat: no-repeat;
-background-size:100% 100%;
-width:525px;
-height:125px;
-}
-.item3_2{
-background-image:url("/assets/images/右下边框.png");
-background-repeat: no-repeat;
-background-size:100% 100%;
-width:525px;
-height:115px;
-margin-top:30px;
-}
-.item3_3{
-background-image:url("/assets/images/右下边框.png");
-background-repeat: no-repeat;
-background-size:100% 100%;
-width:525px;
-height:170px;
-margin-top:30px;
-}
+
 
 .item7{
   
@@ -143,14 +289,16 @@ margin-top:30px;
     background-image:url("/assets/images/矢量智能对象2.png");
     background-repeat: no-repeat;
     background-size:100% 100%;
-    position:relative;
-    left:23px;
-    top:113px;
     width:617px;
     height:280px;
-    
+    background-color: 'RGBA(3, 20, 73, 1)';
+    box-shadow:0 0 140px  RGBA(19, 49, 109, 1) inset;
     }
-    
+
+div.item7>div{
+    display:inline-block;
+    text-align: center;
+}
 .item8{
    
     flex-direction:column;
@@ -159,8 +307,11 @@ margin-top:30px;
     background-size:100% 100%;
     width:525px;
     height:230px; /*temporary*/
+    background-color: 'RGBA(3, 20, 73, 1)';
+    box-shadow:0 0 115px  RGBA(19, 49, 109, 1) inset;
     margin-bottom:25px;
-    margin-top:-20px;
+    margin-top:-30px;
+    
 }
 
 .item9{
@@ -170,91 +321,49 @@ margin-top:30px;
     background-size:100% 100%;
     width:525px;
     height:159px;
+    background-color: 'RGBA(3, 20, 73, 1)';
+    box-shadow:0 0 80px RGBA(19, 49, 109, 1) inset;
 }
-
-.title{
-color:#81E8FE;
-font-size:1.125em;
-position:relative;
-top:-1.5em;
-/*top:-0.5em;
-left:-14em
-*/
-
-}
-.order_list{
-box-sizing: content-box;
-padding-left:30px;
-padding-right:30px;
-
-}
-/*将块元素变成行内元素*/
-ul{
-    display:inline-block;
-  /*  margin-left:30px;*/
-}
-ul.order_listcol1{
-list-style-image:url("/assets/images/矢量智能对象.png");
-
-}
-ul.order_listcol2{
-    list-style-image:url('/assets/images/矢量智能对象(1).png')
-}
-ul.order_listcol3{
-    list-style-image:url('/assets/images/矢量智能对象(2).png')
-}
-li{
-    font-size: 14px;
-    color:white;
-    padding:7px;
-}
-span.data{
-    color:orange;
-}
-
-span.data_block{
+/*
+span.title{
     display:block;
-    color:orange;
+    color:#81E8FE;
+    font-size:1.125em;
+    position:relative;
+    top:-0.5em;
+}*/
+p.title{
+    display:block;
+    margin:0;
+    color:#81E8FE;
+    font-size:1.3em;
+    position:relative;
+    top:-0.5em;
+}
+div.item7 b{
+    font-size:18px;
+    font-family:sans-serif;
+    font-weight:bold;
+    background:linear-gradient(to right ,#2CF3DD, #17DBEC, #06C8F9);
+    background-clip: text;
+    color:transparent;
 }
 
-.task_listcol1 {
-    display:inline-block;
-    list-style-image:url("/assets/images/矢量智能对象(3).png");
-    margin-left:30px;/*百分数?*/
-    margin-right:20px;
-    position:relative;
-    top: -60px;
+li{
+    font-size: 1.143em;
+    color:white;
     
 }
-.task_listcol2{
-    display:inline-block;
-    list-style-image:url("/assets/images/矢量智能对象(4).png");
-    margin-left:30px;
-    margin-right:20px;
-    position:relative;
-    top: -60px;
-}
-.task_listcol3{
-   display:inline-block;
-   list-style-image:url("/assets/images/矢量智能对象(5).png"); 
-   margin-left:30px;
-   margin-right:20px;
-   position:relative;
-    top: -60px;
-}
-.task_listcol4{
-    display:inline-block;
-    list-style-image:url("/assets/images/矢量智能对象(6).png");
-    margin-left:30px;
-    margin-right:20px;
-    position:relative;
-    top: -60px;
+span.data{
+    color:#F8B62D;
 }
 
-.item7 >img{
+
+
+.item7  img{
 display: inline-block;
-margin-top: 20px;
-margin-left:20px;
+margin-top: 10px;
+margin-left:15px;
 }
 
 @keyframes clockwise {
@@ -267,42 +376,39 @@ margin-left:20px;
 }/*2D*/
 
 img#outside{
-    position: relative;
-    z-index:1;
-    left: 102px;
-    top: 14px;
+    width:488px;
+    height:487px;
+    position:absolute;
+    Z-index:3;
+    left: 715px;
+    top: 145px;
 animation:clockwise 10s infinite linear;
 transform-origin:center ;
 /*transform-box: fill-box;*/
 }
 
 img#inside{
-    position:relative;
-    bottom: 454px;
-    left: 123px;
+    width:441px;
+    height:441px;
+    position:absolute;
     Z-index:2;
-animation:anti-clockwise 10s infinite linear;
-transform-origin:center;
+    left:734px;
+    top:164px;
+    animation:anti-clockwise 10s infinite linear;
+    transform-origin:center;
 /*transform-box:fill-box;*/
 }
 
 
 img#earth{
-    position:relative;
-    bottom:170%
-    ;
-    left:80px;
+    width: 505px;
+    height:478px;
+    position:absolute;
+    top:213px;
+    left:696px;
+    Z-index:1;
 }
-img#left{
-    position:relative;
-    bottom:253%;
-    left:-5%;
-}
-img#right{
-    position:relative;
-    bottom:253%;
-    right:-52%;
-}
+
 
 /*
 table{
@@ -327,7 +433,7 @@ th{
   }
 .grid-item {
     background-image:url("/assets/images/矢量智能对象2.png");
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 1);
     padding: 20px;
     font-size:10px;
    

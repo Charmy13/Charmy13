@@ -3,7 +3,7 @@ import * as echarts from 'echarts';
 @Component({
   selector: 'app-issue-top5-bar-chart',
   template: `<div id="issuetotal_bar_chart"></div>`,
-  styles: [`#issuetotal_bar_chart { width:540px;height:200px;}`]
+  styles: [`#issuetotal_bar_chart { width:535px;height:200px;}`]
 })
 export class IssueTOP5BarChartComponent implements OnInit {
 
@@ -29,18 +29,20 @@ const ec = echarts as any;
   let issuetotal_barchartOption ={
   title: {
     text: '累计热门事项',
-    left: '3%',
-    top:'10%',
+    left: '4%',
     textStyle:{
-      color:'#ffffff',
+      color: 'rgba(255,255,255,0.8)',
+      fontStyle: 'normal',
+      fontWeight: 'normal',
+      fontSize: 18,
     }
   },
   grid: 
     {
-     top:55,
-     width: '90%',
-     height:'70%',
-     left: 15,
+     width: 475,
+     height:130,
+     top:'24%',
+    left:'5%',
      containLabel: true
    },
   xAxis: {
@@ -53,20 +55,19 @@ const ec = echarts as any;
       show: true,
     },
     axisLabel:{
-      
-        color:'#ffffff',
+      color:'rgba(255,255,255,0.7)',
       
     }
   },
-  yAxis: {
+  yAxis: [{
     axisLine: {
       show: false,
     },
     axisTick: {
-      show:false
+      show:false,
     },
     axisLabel: {
-      color: '#ffffff',
+      color: 'rgba(255,255,255,0.6)',
     },
     interval:1,
     min:0,
@@ -74,10 +75,24 @@ const ec = echarts as any;
     splitLine:{
       show:true,
       lineStyle: {
-        type: 'dashed',
+        type: [3,5],  /*dash Array*/
+        color: 'rgba(255,255,255,0.2)'
       },
     }
   },
+  {
+    type:'value',
+    name:'单位（万件）',
+    nameGap:8,
+    nameTextStyle:{
+      align:'right',
+      fontFamily:'Kelvin',/*microsoft yahei*/
+      fontSize:12,
+      color: 'rgba(255, 255, 255, 0.7)',
+      
+    }
+  }
+],
   /*dataZoom: [
     {
       type: 'inside'

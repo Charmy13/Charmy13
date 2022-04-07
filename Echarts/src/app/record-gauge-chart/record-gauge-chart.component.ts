@@ -1,9 +1,10 @@
+import { BoundElementProperty } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 @Component({
   selector: 'app-record-gauge-chart',
   template: `<div id="record_gauge_chart" ></div>`,
-  styles:[`#record_gauge_chart { width:525px;height:150px;}`]
+  styles:[`#record_gauge_chart { width:525px;height:115px;}`]
 })
 export class RecordGaugeChartComponent implements OnInit {
 
@@ -55,11 +56,20 @@ export class RecordGaugeChartComponent implements OnInit {
     series: [
       {
         type: 'gauge',
-        radius:'50%',                               /*count 相当于容器宽高最小值的百分比*/
+        radius:'60%',             /*count 相当于容器宽高最小值的一半的百分比   能确定“垂直居中”的距离吗？*/
         startAngle: 90,
         endAngle: -270,
         pointer: {
           show: false
+        },
+        axisLine: {    
+          show:true, 
+          roundCap:true,         /*是否成圆*/  
+          lineStyle: {          /*仪表盘轴线*/
+            width: 3.5,
+            color:[[1,'rgba(255,255,255,0.05)']],
+           
+          }
         },
         progress: {
           show: true,
@@ -68,13 +78,10 @@ export class RecordGaugeChartComponent implements OnInit {
           clip: false,
           itemStyle: {
             color:'#E73851',
+           
           }
         },
-        axisLine: {
-          lineStyle: {
-            width: 5
-          }
-        },
+       
         splitLine: {
           show: false,
         },
@@ -94,15 +101,16 @@ export class RecordGaugeChartComponent implements OnInit {
         detail: {
           width: 80,
           height: 68,
-          fontSize: 20,
+          fontSize: 18,
+          fontWeight:'bold',
           color: '#E73851',
-          formatter: '{value}%'
+          formatter: '{value}%',/*formatter:'{b}<br/>{d}'*/
         },
-         center: ['50%', '25%'],
+         center: ['50%', '30%'],
         datasetIndex: 1
       },
       {  type: 'gauge',
-       radius:'50%',
+       radius:'60%',
         startAngle: 90,
         endAngle: -270,
         pointer: {
@@ -117,9 +125,13 @@ export class RecordGaugeChartComponent implements OnInit {
             color:'#D1B55D',
           }
         },
-        axisLine: {
-          lineStyle: {
-            width: 5
+        axisLine: {    
+          show:true, 
+          roundCap:true,         /*是否成圆*/  
+          lineStyle: {          /*仪表盘轴线*/
+            width: 3.5,
+            color:[[1,'rgba(255,255,255,0.05)']],
+           
           }
         },
         splitLine: {
@@ -141,17 +153,18 @@ export class RecordGaugeChartComponent implements OnInit {
         detail: {
           width: 80,
           height: 68,
-          fontSize: 20,
+          fontSize: 18,
+          fontWeight:'bold',
           color: '#D1B55D',
           formatter: '{value}%'
         },
-        center: ['70%', '25%'],
+        center: ['70%', '30%'],
         datasetIndex: 2,
         
       },
       {
          type: 'gauge',
-          radius:'50%',
+          radius:'60%',
         startAngle: 90,
         endAngle: -270,
         pointer: {
@@ -166,9 +179,13 @@ export class RecordGaugeChartComponent implements OnInit {
             color:'#80C9C2',
           }
         },
-        axisLine: {
-          lineStyle: {
-            width: 5
+        axisLine: {    
+          show:true, 
+          roundCap:true,         /*是否成圆*/  
+          lineStyle: {          /*仪表盘轴线*/
+            width: 3.5,
+            color:[[1,'rgba(255,255,255,0.05)']],
+           
           }
         },
         splitLine: {
@@ -189,11 +206,12 @@ export class RecordGaugeChartComponent implements OnInit {
         detail: {
           width: 80,
           height: 68,
-          fontSize: 20,
+          fontSize: 18,
+          fontWeight:'bold',
           color: '#80C9C2',
           formatter: '{value}%'
         },
-        center: ['90%', '25%'],
+        center: ['90%', '30%'],
         datasetIndex: 3
       },
     ]

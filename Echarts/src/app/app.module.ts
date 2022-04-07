@@ -13,6 +13,7 @@ import { PeriodplanLineChartComponent } from './periodplan-line-chart/periodplan
 import { IssueTOP5BarChartComponent } from './issue-top5-bar-chart/issue-top5-bar-chart.component';
 import { IssueTotalBarChartComponent } from './issue-total-bar-chart/issue-total-bar-chart.component';
 import { RecordGaugeChartComponent } from './record-gauge-chart/record-gauge-chart.component';
+import { OrderListChartComponent } from './order-list-chart/order-list-chart.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RecordGaugeChartComponent } from './record-gauge-chart/record-gauge-cha
     IssueTOP5BarChartComponent,
     IssueTotalBarChartComponent,
     RecordGaugeChartComponent,
+    OrderListChartComponent,
   ],
   imports: [
    BrowserModule,

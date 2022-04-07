@@ -4,7 +4,7 @@ import * as echarts from 'echarts';
 @Component({
   selector: 'app-production-bar-chart',
   template: `<div id="production_bar_chart"></div>`,
-  styles: [`#production_bar_chart { width:545px;height:160px;}`]
+  styles: [`#production_bar_chart { width:525px;height:170px;}`]
 })
 export class ProductionBarChartComponent implements OnInit {
   constructor() {}
@@ -35,19 +35,23 @@ export class ProductionBarChartComponent implements OnInit {
         },
       },
       grid: {/*直角坐标系大小*/
-        width: '500', /*和容器大小(不如)有区别*/
-        height: '100',
-        top:'20%',
-        left:'9%',
+        width: '420', /*和容器大小(不如)有区别*/
+        height: '130',
+        top:'15%',
+        left:'10%',
+        right:'10%',
         containLabel: true,
-        //show:true,
+        
       },
       xAxis: [
         {
           type: 'category',
           data: xAxis_datas,
           axisLabel:{
-            color:'#ffffff',
+            color:'rgba(255,255,255,0.7)',
+          },
+          axisLine:{
+              lineStyle:{color:'rgba(255,255,255,0.7)'},
           },
           axisTick: {
             alignWithLabel: true,
@@ -61,28 +65,45 @@ export class ProductionBarChartComponent implements OnInit {
           min: 0,
           max: 800,                   /*count*/
           interval: 200,
+          splitNumber:200,
+          splitArea:{
+            show:true,
+            areaStyle:{
+              color:['rgba(255,255,255,0)','rgba(255,255,255,0.05)']
+            },
+             
+          },
           splitLine: {
             show: true,
+            lineStyle:{
+              color:'rgba(255,255,255,0.3)',
+            }
           },
+          
          axisLabel:{
            color:'#ffffff',
+           margin:13,           /*刻度标签与轴线之间的而距离*/
          }
         },
         {
-          type: 'value',
-          name: '业务量（条）',
-          
+          /*type:'value',*/
+          name: '业务量（ 条 ）',
+          nameGap:13,               
+          splitArea:{
+            show:false,
+          },
           nameTextStyle: {
-            width:'10px',
-            align: 'right',
-            color:'#ffffff',
+            fontSize:'12px',
+            fontFamily:'Courier New',  /*？*/
+            align: 'right',   
+            color:'rgba(255,255,255,0.7)',
           },
         },
       ],
       series: [
         {
           type: 'bar',
-          barWidth: '20%',
+          barWidth: '27%',   /*相当于一刻度单位的占比*ui:27px*/
           data: series_datas,
           label: {
             show: true,
@@ -90,13 +111,7 @@ export class ProductionBarChartComponent implements OnInit {
             formatter: '{c}',
             color: '#DEA532',
             fontWeight: 'bolder',
-            /*fontSize:12,*/
-            /*name:'Direct',*/
-            /*bar阴影背景
-  showBackground: true,
-    backgroundStyle: {
-      color: 'rgba(180, 180, 180, 0.2)'
-    },*/
+           
           },
         },
       ],

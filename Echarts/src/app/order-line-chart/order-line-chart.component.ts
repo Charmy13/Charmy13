@@ -1,9 +1,10 @@
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+
 @Component({
   selector: 'app-order-line-chart',
-  template: `<div id="order_line_chart" style="width=525px;height:230px"></div>
+  template: `<div id="order_line_chart" style="width=535px;height:230px"></div>
 
     <!-- <div echarts [options]="chartOption" ></div>--> `,
   styleUrls: ['./order-line-chart.component.css'],
@@ -24,22 +25,28 @@ export class OrderlineChartComponent implements OnInit {
     //echarts.init(this.chartDom).setOption(this.options)
   }
   initCharts() {
+    const data=[{}];
     const ec = echarts as any;
     let linechart = ec.init(document.getElementById('order_line_chart'));
     let order_linechartOption = {
       title: {
         show: true,
         text: '2021年度订单统计分析',
-        textAlign: '45',
-        textVerticalAlign: 'top', //相对于容器而言。四个边都算是！
-        left: '29%',
+        left:'center',/*距离容器左侧的宽度*/
         textStyle: {
           color: '#FFFFFF',
           fontStyle: 'normal',
           fontWeight: 'normal',
-          fontSize: 18,
-          //fontWeight:'bolder',  fontWeight:'100',
+          fontSize: 17,
         },
+      },
+      grid: {
+      
+        width: '450',
+        height: '130',
+        top:'30%',
+        left:'8%',
+
       },
       xAxis: {
         type: 'category',
@@ -49,7 +56,8 @@ export class OrderlineChartComponent implements OnInit {
         },
         axisLabel:{
           show: true,
-          color:'#FFFFFF',
+          color:'rgba(255, 255, 255, 0.7)',
+         
         },
         data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月'],
       },
@@ -58,45 +66,44 @@ export class OrderlineChartComponent implements OnInit {
         type: 'value',
         position: 'left',   /*count*/
         nameTextStyle: {
-          color: '#FFFFFF',
+          color: 'rgba(255, 255, 255, 0.7)',
           fontStyle: 'normal',
           //fontWeight: 'lighter',
           //fontFamily: 'normal',
-          fontSize: 9,
           align: 'left',
           verticalAlign: 'bottom',
         },
         axisLine: {
           show: true,
+          color:'rgba(255, 255, 255, 0.7)'
         },
-        // splitNumber:1,
         interval: 1,
         min: 0,
         max: 5,              /*count*/
         axisLabel: {
           show: true,
-          color:'#FFFFFF',
+          color:'rgba(255, 255, 255, 0.7)',
         },
         splitLine: {
           lineStyle: {
             type: 'dashed',
+            color:'rgba(255, 255, 255, 0.3)'
           },
         },
       },
     {
     type:'value',
-     name:'单位（万件）',
+     name:'单位(万件)',            
      nameTextStyle:{
        align:'right',
-       color: '#FFFFFF',
+       fontFamily:'Courier New',
+       fontSize:12,
+       color: 'rgba(255, 255, 255, 0.7)',
+       
      }
     }
     ],
-      grid: {
-        width: '420',
-        height: '130',
-      },
-
+    
       series: [
         {
           data: [1.7, 2.1, 4.1, 2.8, 1.9, 1.1, 1.95, 2.1, 1.85],

@@ -3,7 +3,7 @@ import * as echarts from 'echarts';
 @Component({
   selector: 'app-issue-total-bar-chart',
   template: `<div id="issuetop5_bar_chart"></div>`,
-  styles: [`#issuetop5_bar_chart { width:540px;height:200px;margin-bottom:-10px;}`]
+  styles: [`#issuetop5_bar_chart { width:540px;height:200px;}`]
 })
 export class IssueTotalBarChartComponent implements OnInit {
 
@@ -15,9 +15,8 @@ export class IssueTotalBarChartComponent implements OnInit {
 
   initCharts() {
   
-const Icons = {
-  
-  first:'./src/assets/images/矢量智能对象(7).png',
+const Icons = {  
+  first:'/src/assets/images/矢量智能对象(7).png',
   second:'/src/assets/images/矢量智能对象 拷贝 5.png',
   third: '/src/assets/images/矢量智能对象 拷贝 6.png',
   fourth:'/src/assets/images/矢量智能对象 拷贝 7.png',
@@ -33,11 +32,11 @@ const datas = [
   { value: 63, name: '第五班组', itemStyle: { color: '#937532' } }
 ];
 const datasRoundup = [
-  { value: '300', name: '第一班组' },
-  { value: '300', name: '第二班组' },
-  { value: '300', name: '第三班组' },
-  { value: '300', name: '第四班组' },
-  { value: '300', name: '第五班组' }
+  { value: '250', name: '第一班组' },
+  { value: '250', name: '第二班组' },
+  { value: '250', name: '第三班组' },
+  { value: '250', name: '第四班组' },
+  { value: '250', name: '第五班组' }
 ];
 /*
 const builderJson = {
@@ -78,21 +77,23 @@ const ec = echarts as any;
       title: [
         {
           text: '今日热门事项TOP5',
-          left: '33%',
-          top: '2%',
-          textAlign: 'right',
+          left: 20,
+          top: 5,
+          textAlign: 'left',
           textStyle: {
-            color: '#ffffff'
+            color: 'rgba(255,255,255,0.8)',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            fontSize:18,
           }
         }
       ],
       grid: [
         {
-          top: 50,
-          width: '90%',
-          height: '75%',
-          bottom: '35%',
-          left: 20,
+          width: '475',
+          height: '120',
+          top:'24%',
+          left:'5%',
           containLabel: true
         }
       ],
@@ -104,8 +105,6 @@ const ec = echarts as any;
         {
           inverse: true,
           type: 'value',
-    
-          // max: builderJson.all,
           max: 300, //count //f{ return  向上取整as max,}
           axisLine: {
             show: false
@@ -134,48 +133,47 @@ const ec = echarts as any;
             show: false
           },
           axisLabel: {
-            margin: 120       /*count*/
+            color:'rgba(255,255,255,1)',
+            margin:105,   /*count*/
+            formatter:['{1|1}','{2|2}','{3|3}','{4|4}','{5|5}'],        
+             rich: {                     //icon
+                 1: {
+                    backgroundColor: {
+                      image: '../assets/images/矢量智能对象(7).png',
+                    }
+                  },
+                  '2': {
+                   
+                    backgroundColor: {
+                      image: Icons.second
+                    }
+                  },
+                  3: {
+                   
+                    backgroundColor: {
+                      image: Icons.third
+                    }
+                  },
+                  4: {
+               
+                    backgroundColor: {
+                      image:Icons.fourth
+                    }},
+                    5: {
+                    /*height: 40,
+                    align: 'center',*/
+                    backgroundColor: {
+                      image: Icons.fifth
+                    }
+                  }
+                  }
           },
+
           splitLine: {
             show: false
           },
-           rich: {                     //icon
-            
-            first: {
-              height: 30,
-              align: 'left',
-              backgroundColor: {
-                image: Icons.first
-              }
-            },
-            second: {
-              height: 40,
-              align: 'center',
-              backgroundColor: {
-                image: Icons.second
-              }
-            },
-            third: {
-              height: 40,
-              align: 'center',
-              backgroundColor: {
-                image: Icons.third
-              }
-            },
-             fourth: {
-              height: 40,
-              align: 'center',
-              backgroundColor: {
-                image:Icons.fourth
-              }},
-               fifth: {
-              height: 40,
-              align: 'center',
-              backgroundColor: {
-                image: Icons.fifth
-              }
-          }
-        }
+         
+         
         
         }
       ],
@@ -186,23 +184,19 @@ const ec = echarts as any;
         {
           type: 'bar',
           z: 100,
-          barWidth: 15,
-          barGap: 12,
-          //stack:'chart',
-          // z: 3,
-          /*  showBackground:true,
-          backgroundStyle: {
-          color: 'rgba(180, 180, 180, 0.2)'
-        },*/
+          barWidth: 12,
+          barGap:15,
           label: {
             formatter: '{c}',
             show: true,
             position: 'right',
-            align: 'right'
+            align: 'right',
+             color:'rgba(255,255,255,0.8)',
+           
           },
           labelLayout:{
             align:'right',
-            dx:-10
+            dx:-10,
           },
           data: datas
         },
@@ -210,18 +204,19 @@ const ec = echarts as any;
           type: 'bar',
           itemStyle: {
             normal: {
-              color: '#ffffff'
+              color: 'rgba(255,255,255,0.05)'
             }
           },
           label: {
             show: true,
             formatter: '{b}',
             position: 'left',
+            color:'rgba(255,255,255,0.8)'
           },
           labelLayout:{
             verticalAlign:'middle',
             align:'right',
-            dx:-43
+            dx:-95
           },
        /*   labelLayout(params) {
         return {
@@ -234,7 +229,7 @@ const ec = echarts as any;
     }
     */
           silent: true,
-          barWidth: 15,
+          barWidth: 12,
           barGap: '-100%',
           data: datasRoundup,
         }
