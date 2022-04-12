@@ -52,7 +52,6 @@ export class RecordGaugeChartComponent implements OnInit {
     const ec = echarts as any;
     let gaguechart = ec.init(document.getElementById('record_gauge_chart'));
     let gaguechartOption = {
-
     series: [
       {
         type: 'gauge',
@@ -155,6 +154,7 @@ export class RecordGaugeChartComponent implements OnInit {
           height: 68,
           fontSize: 18,
           fontWeight:'bold',
+          fontFamily:'Microsoft YaHei',
           color: '#D1B55D',
           formatter: '{value}%'
         },
@@ -201,6 +201,7 @@ export class RecordGaugeChartComponent implements OnInit {
         data: gaugeData3,
         title: {
           fontSize: 12,
+          fontFamily:'Microsoft YaHei',
           color:'#ffffff',
         },
         detail: {

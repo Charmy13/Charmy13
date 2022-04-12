@@ -13,4 +13,32 @@ background-repeat: repeat;
 background-position:center center;
 }
 
+@font-face{
+    font-family:DIN;
+    src: url('/assets/font/DIN.ttf');
+    font-weight:bolder;
+
+}
+@font-face{
+    font-family:HunDIN1451-1;
+    src:url('/assets/font/HunDIN1451-1.ttf');
+}
+@font-face{
+    font-family:DIN-Regular-2;
+    src:url('/assets/font/DIN-Regular-2.otf');
+}
+@font-face{
+    font-family:DIN-Condensed-Bold-2;
+    src:url('/assets/font/DIN-Condensed-Bold-2.ttf');
+}
+@font-face{
+  font-family:Microsoft Yahei;
+  src:url('/assets/font/msyh.ttf');
+
+}
+@font-face{
+    font-family:Microsoft Yahei Bold;
+    src:url('/assets/font/msyhbd.ttf');
+}
+
 

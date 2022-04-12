@@ -3,7 +3,7 @@ import * as echarts from 'echarts';
 @Component({
   selector: 'app-issue-total-bar-chart',
   template: `<div id="issuetop5_bar_chart"></div>`,
-  styles: [`#issuetop5_bar_chart { width:540px;height:200px;}`]
+  styles: [`#issuetop5_bar_chart { width:540px;height:180px;}`]
 })
 export class IssueTotalBarChartComponent implements OnInit {
 
@@ -77,22 +77,22 @@ const ec = echarts as any;
       title: [
         {
           text: '今日热门事项TOP5',
-          left: 20,
-          top: 5,
+          left: '4%',
           textAlign: 'left',
           textStyle: {
             color: 'rgba(255,255,255,0.8)',
             fontStyle: 'normal',
             fontWeight: 'normal',
             fontSize:18,
+            fontFamily:'Microsoft Yahei',
           }
         }
       ],
       grid: [
         {
-          width: '475',
-          height: '120',
-          top:'24%',
+          width:'475',
+          height:'130',
+          top:'20%',
           left:'5%',
           containLabel: true
         }
@@ -113,7 +113,10 @@ const ec = echarts as any;
             show: false
           },
           axisLabel: {
-            show: false
+            show: false,
+            nameTextStyle:{
+              fontFamily:'Microsoft YaHei',
+            }
           },
           splitLine: {
             show: false
@@ -135,35 +138,48 @@ const ec = echarts as any;
           axisLabel: {
             color:'rgba(255,255,255,1)',
             margin:105,   /*count*/
-            formatter:['{1|1}','{2|2}','{3|3}','{4|4}','{5|5}'],        
+            formatter:[
+              '{first|'+1+'}',
+              '{second|'+2+'}',
+              '{third|'+3+'}',
+              '{fourth|'+4+'}',
+              '{fifth|'+5+'}',
+            ],        /*{stylename|text} */
              rich: {                     //icon
-                 1: {
+                 first: {
                     backgroundColor: {
-                      image: '../assets/images/矢量智能对象(7).png',
+                      width:14,
+                      height:16,
+                      image: '/assets/images/矢量智能对象(7).png',
                     }
                   },
-                  '2': {
+                  second: {
                    
                     backgroundColor: {
-                      image: Icons.second
+                      width:14,
+                      height:16,
+                      image: '/assets/images/矢量智能对象 拷贝 5.png',
                     }
                   },
-                  3: {
-                   
-                    backgroundColor: {
-                      image: Icons.third
+                  third: {                
+                      backgroundColor: {
+                        width:14,
+                        height:16,
+                        image: '/assets/images/矢量智能对象 拷贝 6.png',
                     }
                   },
-                  4: {
-               
+                  fourth: {
                     backgroundColor: {
-                      image:Icons.fourth
-                    }},
-                    5: {
-                    /*height: 40,
-                    align: 'center',*/
+                      width:14,
+                      height:16,
+                      image:'/assets/images/矢量智能对象 拷贝 7.png',
+                    }
+                  },
+                    fifth: {
                     backgroundColor: {
-                      image: Icons.fifth
+                      width:14,
+                      height:16,
+                      image:'/assets/images/矢量智能对象 拷贝 8.png',
                     }
                   }
                   }
@@ -184,21 +200,19 @@ const ec = echarts as any;
         {
           type: 'bar',
           z: 100,
-          barWidth: 12,
-          barGap:15,
+          barWidth:12,   /*12 */
           label: {
-            formatter: '{c}',
             show: true,
-            position: 'right',
-            align: 'right',
-             color:'rgba(255,255,255,0.8)',
-           
+            formatter: '{c}',
+            position: ['100%','10%'],                                   
+            color:'rgba(255,255,255,0.8)',
+            fontSize:12,
           },
           labelLayout:{
             align:'right',
             dx:-10,
           },
-          data: datas
+          data: datas,
         },
         {
           type: 'bar',

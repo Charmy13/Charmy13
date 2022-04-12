@@ -31,17 +31,18 @@ const ec = echarts as any;
     text: '累计热门事项',
     left: '4%',
     textStyle:{
-      color: 'rgba(255,255,255,0.8)',
+      color: 'rgba(255,255,255,0.8 )',
       fontStyle: 'normal',
       fontWeight: 'normal',
       fontSize: 18,
+      fontFamily:'Microsoft Yahei'
     }
   },
   grid: 
     {
      width: 475,
-     height:130,
-     top:'24%',
+     height:145,
+     top:'25%',
     left:'5%',
      containLabel: true
    },
@@ -56,6 +57,11 @@ const ec = echarts as any;
     },
     axisLabel:{
       color:'rgba(255,255,255,0.7)',
+      nameTextStyle: {
+        fontSize:12,
+        fontFamily:'Microsoft YaHei',  
+      },
+      margin:10,
       
     }
   },
@@ -86,7 +92,7 @@ const ec = echarts as any;
     nameGap:8,
     nameTextStyle:{
       align:'right',
-      fontFamily:'Kelvin',/*microsoft yahei*/
+      fontFamily:'Microsoft Yahei',
       fontSize:12,
       color: 'rgba(255, 255, 255, 0.7)',
       
@@ -101,7 +107,7 @@ const ec = echarts as any;
   series: [
     {
       type: 'bar',
-      barWidth:25,
+      barWidth:30,
       itemStyle: {
         color: new ec.graphic.LinearGradient(0, 0, 0, 1, [
           { offset: 0, color: '#49AC73' },

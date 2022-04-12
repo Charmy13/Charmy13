@@ -3,7 +3,7 @@ import * as echarts from 'echarts';
 @Component({
   selector: 'app-periodplan-line-chart',
   template: `<div id="periodplan_line_chart"></div>`,
-  styles: [`#periodplan_line_chart{width:525px;height:200px;}`],
+  styles: [`#periodplan_line_chart{width:525px;height:159px;}`],
 })
 export class PeriodplanLineChartComponent implements OnInit {
   constructor() {}
@@ -119,18 +119,15 @@ export class PeriodplanLineChartComponent implements OnInit {
     let linechart = ec.init(document.getElementById('periodplan_line_chart'));
     let periodplan_linechartOption = {
       grid: {
-        
-        /*left: 8,*/
-        /*right: 15,*/
         width: 440,
-        height:90,
+        height:85,
         top: '5%',
-        left:'7%',
+        left:'9%',
        
       },
       xAxis: {
         type: 'category',//type:'time',
-        boundaryGap: false,
+        boundaryGap:false,
         data: [
           '2020-01',
           '2021-02',
@@ -142,11 +139,13 @@ export class PeriodplanLineChartComponent implements OnInit {
         ],
         axisTick: {
           show: false,
-          alignWithLabel: false,
+          alignWithLabel: true,
         },
         axisLabel: {
-          align: 'left' /*文字左对齐，向右移动 是以center而言？*/,
+          align: 'center' /*文字左对齐，向右移动 是以center而言？*/,
           color:'rgba(255,255,255,0.8)',
+          fontFamily:'Microsoft YaHei',
+          
         },
         
       },

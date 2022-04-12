@@ -37,11 +37,11 @@ export class OrderlineChartComponent implements OnInit {
           color: '#FFFFFF',
           fontStyle: 'normal',
           fontWeight: 'normal',
-          fontSize: 17,
+          fontSize: 18,
+          fontFamily:'Microsoft YaHei',
         },
       },
       grid: {
-      
         width: '450',
         height: '130',
         top:'30%',
@@ -56,20 +56,20 @@ export class OrderlineChartComponent implements OnInit {
         },
         axisLabel:{
           show: true,
+          align:'center',
           color:'rgba(255, 255, 255, 0.7)',
-         
+          fontFamily:'Microsoft YaHei',
         },
         data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月'],
       },
 
       yAxis:[ {
         type: 'value',
-        position: 'left',   /*count*/
+        position: 'left',                                 /*count*/
         nameTextStyle: {
           color: 'rgba(255, 255, 255, 0.7)',
           fontStyle: 'normal',
-          //fontWeight: 'lighter',
-          //fontFamily: 'normal',
+          fontFamily: 'Microsoft Yahei',
           align: 'left',
           verticalAlign: 'bottom',
         },
@@ -79,7 +79,7 @@ export class OrderlineChartComponent implements OnInit {
         },
         interval: 1,
         min: 0,
-        max: 5,              /*count*/
+        max: 5,                                            /*count*/
         axisLabel: {
           show: true,
           color:'rgba(255, 255, 255, 0.7)',
@@ -93,10 +93,10 @@ export class OrderlineChartComponent implements OnInit {
       },
     {
     type:'value',
-     name:'单位(万件)',            
+     name:'单位（万件）',            
      nameTextStyle:{
        align:'right',
-       fontFamily:'Courier New',
+       fontFamily:'Microsoft YaHei',
        fontSize:12,
        color: 'rgba(255, 255, 255, 0.7)',
        

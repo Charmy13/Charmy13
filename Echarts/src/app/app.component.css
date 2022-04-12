@@ -1,11 +1,11 @@
 .col-md-12{
     background-image:url("/assets/images/标题@2x(modified).png");
-    background-size:cover;
+    background-size:100% 90%;
     background-repeat: no-repeat;
     background-origin: border-box;
     background-position: left top ;
     width:100%;
-    height:112px;
+    height:102px;
     margin:auto;
 }
 
@@ -24,11 +24,12 @@
 }
 .title_logo{
     position:relative;
-    top:20px;
+    top:7px;
     left:3px;
     width:510px;
     height:67px;
     margin:auto;/*内部元素（块）居中对齐*/
+    text-align: center;
 }
 
 .grid_item1{
@@ -40,113 +41,42 @@
    height:430px;
    background:url("/assets/images/矢量智能对象2.png")  no-repeat;
    background-size:contain;
-   background-color: 'RGBA(3, 20, 73, 1)';
-   box-shadow:0 0 212.5px 30px RGBA(19, 49, 109, 1) inset;
+   background-color: RGBA(3, 20, 73, 0.4);
+   box-shadow:0 0 43px 35px RGBA(19, 49, 109,0.6) inset;  /*由于外边的颜色不能盖住边框，增加透明度会减少颜色效果，选择增加blur来替代这种不足spread取'padding' */
    box-sizing:content-box;
    /*grid-column:1/2;*/
 
 }
-div.center_title{
-    position:absolute;
-    top:320px;     /*用px*/
-    left:45%;
-    text-align: center;
-    z-index:0;
-}
-div.item7_1{
-    background: url("/assets/images/圆柱体 3.png") no-repeat;
-    background-size: contain;
-    width:100px;
-    height:168px;
-    position: relative;
-   top:70px;
-    margin-left: 20px;
-}
-div.item7_2{
-    background:url("/assets/images/圆柱体2.png") no-repeat;
-    background-size: contain;
-    width:100px;
-    height:183px;
-    position: relative;
-    top:55px;
-    margin-left: 10px;
-}
-div.item7_3{
-    background:url("/assets/images/圆柱体.png") no-repeat;
-    background-size: contain;
-    width:100px;
-    height:207px;
-    position: relative;
-    top:35px;
-    margin-left: 10px;
-}
-div.item7_4{
-    background:url("/assets/images/圆柱体1.png") no-repeat;
-    background-size: contain;
-    width:100px;
-    height:187px;
-    position: relative;
-    top:50px;
-    margin-left: 10px;
-}
-div.item7_5{
-    background:url("/assets/images/圆柱体4.png") no-repeat;
-    background-size: contain;
-    width:99px;
-    height:171px;
-    position: relative;
-    top:60px;
-    margin-left: 10px;
-}
 
-
-
-
-
-
-h2{
-    color:white ;
-    font-size:30px;
-    font-family:micorsoft yahei;
-    margin:0;
-}
-h2+p{
-    font-Size:90px;
-    font-weight:lighter;
-    background:linear-gradient(to bottom ,#22D1E5,#2AEBD5);
-   background-clip:text;
+h1{
+    background:linear-gradient(to bottom,#FFFFFF,#D1D4D6,#929A9F);
+    background-clip:text;
+    text-shadow:2px 2px 0px #BABFC2;/*linear-gradient(to right,#FFFFFF,#828B96,#687A8F,#77808B);*/
+/*    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+*/
     color:transparent;
-    font-family: fantasy;   /*字体要换*/
-    margin:0; 
-
-    
+    margin:0;
+    font-size:3.1em;
+    font-family:'Microsoft Yahei';        
 }
+
+
+
+
 
 .grid_item2{
 display:flex;
 flex-direction: column;
+box-sizing: content-box;
 width:690px;
 height:500px;
+position:relative;  /*地球父级元素*/
 }
-/*
-background-image:url("/assets/images/地球底托@2x.png")  ;
-background-repeat:no-repeat ;
-background-position:bottom ;
-background-size:/*80% 70%;
- }*/
-/*background-blend-mode: overlay;*/
-/*background-image:url("/assets/images/地球@2x.png");
-background-repeat: no-repeat;
-background-size:100% 110%;*/
-/*background-position: bottom;*/
-/*图片像素大小
-height:762px;  
-width: 683px;*/
 
 .grid_item3{
 display:flex;
-flex-direction: column;
-flex-wrap: nowrap;
+flex-direction:column;
+flex-wrap:nowrap;
 /*justify-content:space-between;*/
 align-items:baseline;
 width:525px;
@@ -154,16 +84,16 @@ height:430px;
 }
 .item3_1{
     background-image:url("/assets/images/右下边框.png");
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     background-size:100% 100%;
     width:525px;
     height:115px;
-    background-color: 'RGBA(3, 20, 73, 1)';
-    box-shadow:0 0 50px 10px RGBA(19, 49, 109, 1) inset;
-    
+    background-color:RGBA(3, 20, 73, 0.4);
+    box-shadow:0 0 26.22px 11.5px RGBA(19, 49, 109, 0.6) inset;/*宽高比4.56 spread=10%*height  blur=长比短/2*spread*/
+    position: relative;
     }
  
-    .item3_2{
+.item3_2{
     width:525px;
     height:115px;
     background-image:url("/assets/images/右下边框.png");
@@ -172,39 +102,41 @@ height:430px;
     margin-top:25px;
     margin-bottom:25px;
    box-sizing: content-box;
-   background-color: 'RGBA(3, 20, 73, 1)';
-   box-shadow:0 0 50px 10px RGBA(19, 49, 109, 1) inset;
-    }
+   background-color: RGBA(3, 20, 73, 0.4);
+   box-shadow:0 0 26.22px 11.5px RGBA(19, 49, 109, 0.6) inset;/*宽高比4.56 spread=10%（长比短太大了只能选择内边距对齐为标准，当为13%刚好对齐)*短  blur=1.5*spread*/
+}
 .task{
     width:525px;
-    height:115px;
+    height:85px;
     margin-top:-5px;
     }
 div.task div {
+    background-color:rgba(20,105,170,0.2);
     display:inline-block;
     width:105px;
     height:60px;
-    background-color:rgba(20,105,170,0.1);
     margin-left:15px;/*百分数?*/
-    margin-top:15px;
-    padding-inline-start: 8px;
-    font-size:13px;
-    color:white;
+    margin-top:5px;
+    padding-inline-start: 5px;
+    font-size:12px;
+    color:rgba(255,255,255,1);
+    
 }
 div.task p{
     margin:0;
+    padding-top: 12px;
 }
 .data_block{
     color:#F8B62D;
     font-size:18px;
     font-weight: bold;
-    /*font-family:*/
+    font-family:DIN-Regular-2;
 }
 
 div.task img{
   float:left;
-  padding-top:10px;
-  padding-right: 10px;
+  padding-top:15px;
+  padding-right: 8px;
 }
 
     .item3_3{
@@ -212,55 +144,40 @@ div.task img{
     background-repeat: no-repeat;
     background-size:100% 100%;
     width:525px;
-    height:190px;
-    background-color: 'RGBA(3, 20, 73, 1)';
-    box-shadow:0 0 95px 20px RGBA(19, 49, 109, 1) inset;
+    height:180px;
+    background-color: RGBA(3, 20, 73, 0.4);
+    box-shadow:0 0 52px 19px RGBA(19, 49, 109, 0.6) inset;/*长比短2.76 spread=10%*短  blur=长比短2.76*spread*/
     box-sizing: content-box;
     
     }
 .total{
     display: inline-block;
     position:absolute;
-    top:150px;  /*top:158px;*/
-    left:1345px;/*left:1355px;*/
+    top:25%;
+    left:6%;
     z-index:1;
-    font-size:2.3vw;
-    font-size:2.625em;
-    font-stretch:expanded;
+    font-size:2.625em;   /*90px*/
     color: #F8B62D;
-    font-weight: bold;
-    /*font-family: ;*/
+    font-family:Microsoft Yahei;
     font-style: normal;
-    
-   /* text-indent:2px;*//*文字缩进*/
-    /*letter-spacing:1px;
-    line-height:1px;
-    word-spacing:10px;*/
-   /* white-space: nowrap;*//*不换行*/
-}
-/*
-@font-face{
-    font-family:myFirstFont;
-    src:url();
-    font-stretch:condensed;
-    font-style:normal;
-    font-weight: bold;
-    unicode-range:unicode-range;
-}
-*/
+    font-weight: bolder;
+}   
+  
 i{
 font-size:0.7em;   
 font-weight: bold;
 }
 .grid_item4{
-display:flex;
-flex-direction:column;
-height:435px;
+height:425px;
 width:532px;
 background-image:url("/assets/images/矢量智能对象2.png") ;
 background-repeat: no-repeat;
-background-color: 'RGBA(3, 20, 73, 1)';
-box-shadow:0 0 260px 40px RGBA(19, 49, 109, 1) inset;
+background-size: 100% 100%;
+background-color: RGBA(3, 20, 73, 0.4);
+box-shadow:0 0 42.45px 34.8px RGBA(19, 49, 109, 0.6) inset;/*spread=短比长8%*height  blur=长比短1.22*spread*/
+display:flex;
+flex-direction:column;
+/*justify-content: space-between;*/
 margin-top:-50px;
 }
 
@@ -268,10 +185,10 @@ margin-top:-50px;
 display:flex;
 flex-direction:column;
 height:380px;
-width:620px;
-padding-top: 75px;
-padding-left:35px;
-padding-right:25px;
+width:637px;
+padding-top: 35px;
+padding-left:45px;
+padding-right:20px;
 }
 
 .grid_item6{
@@ -284,21 +201,69 @@ width:532px;
 
 
 .item7{
-  
-    flex-direction:column;
+  display:flex;
+    flex-direction:row;
+    justify-content: space-between;
     background-image:url("/assets/images/矢量智能对象2.png");
     background-repeat: no-repeat;
     background-size:100% 100%;
     width:617px;
-    height:280px;
-    background-color: 'RGBA(3, 20, 73, 1)';
-    box-shadow:0 0 140px  RGBA(19, 49, 109, 1) inset;
+    height:312px;
+    background-color: RGBA(3, 20, 73, 0.4);
+    box-shadow:0 0 56px 28px  RGBA(19, 49, 109, 0.6) inset;/*长比短2.20 spread=10%*短  blur=长比短2.20*spread*/
     }
 
 div.item7>div{
     display:inline-block;
     text-align: center;
 }
+
+div.item7_1{
+    background: url("/assets/images/圆柱体 3.png") no-repeat;
+    background-size: contain;
+    width:100px;
+    height:168px;
+    position: relative;
+    top:31%;
+    margin-left: 20px;
+}
+div.item7_2{
+    background:url("/assets/images/圆柱体2.png") no-repeat;
+    background-size: contain;
+    width:100px;
+    height:183px;
+    position: relative;
+    top:26%;
+  
+}
+div.item7_3{
+    background:url("/assets/images/圆柱体.png") no-repeat;
+    background-size: contain;
+    width:100px;
+    height:207px;
+    position: relative;
+    top:20%;
+}
+div.item7_4{
+    background:url("/assets/images/圆柱体1.png") no-repeat;
+    background-size: contain;
+    width:100px;
+    height:187px;
+    position: relative;
+    top:26%;
+ 
+}
+div.item7_5{
+    background:url("/assets/images/圆柱体4.png") no-repeat;
+    background-size: contain;
+    width:99px;
+    height:171px;
+    position: relative;
+    top:31%;
+    margin-right: 20px;
+}
+
+
 .item8{
    
     flex-direction:column;
@@ -307,10 +272,10 @@ div.item7>div{
     background-size:100% 100%;
     width:525px;
     height:230px; /*temporary*/
-    background-color: 'RGBA(3, 20, 73, 1)';
-    box-shadow:0 0 115px  RGBA(19, 49, 109, 1) inset;
+    background-color: RGBA(3, 20, 73, 0.4);
+    box-shadow:0 0 52.44px 23px  RGBA(19, 49, 109, 0.6) inset; /*长比短2.28 短比长:0.43 spread=10%*短 blur=长比短*spread*/
     margin-bottom:25px;
-    margin-top:-30px;
+    margin-top:-40px;
     
 }
 
@@ -321,8 +286,8 @@ div.item7>div{
     background-size:100% 100%;
     width:525px;
     height:159px;
-    background-color: 'RGBA(3, 20, 73, 1)';
-    box-shadow:0 0 80px RGBA(19, 49, 109, 1) inset;
+    background-color: RGBA(3, 20, 73, 0.4);
+    box-shadow:0 0 26.235px 15.9px RGBA(19, 49, 109, 0.6) inset; /*长比短3.30 短比长0.303 spread=10%*短 blur=1.65*spread*/
 }
 /*
 span.title{
@@ -342,10 +307,11 @@ p.title{
 }
 div.item7 b{
     font-size:18px;
-    font-family:sans-serif;
+    font-family:Microsoft Yahei;
     font-weight:bold;
     background:linear-gradient(to right ,#2CF3DD, #17DBEC, #06C8F9);
     background-clip: text;
+    /*-webkit-background-clip:text;*/
     color:transparent;
 }
 
@@ -384,7 +350,6 @@ img#outside{
     top: 145px;
 animation:clockwise 10s infinite linear;
 transform-origin:center ;
-/*transform-box: fill-box;*/
 }
 
 img#inside{
@@ -396,7 +361,6 @@ img#inside{
     top:164px;
     animation:anti-clockwise 10s infinite linear;
     transform-origin:center;
-/*transform-box:fill-box;*/
 }
 
 

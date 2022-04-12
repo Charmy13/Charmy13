@@ -33,8 +33,7 @@ export class PiechartComponent implements OnInit {
         icon: 'rect',
         orient: 'vertical',
         left: '65%',
-        
-        width:525,
+        width:200,
         height:200,/*图例组件高度*/
         itemWidth: 12,
         itemHeight: 11,
@@ -84,47 +83,47 @@ export class PiechartComponent implements OnInit {
           data: [
             {
               value: 180,
-              name: '打铁座',      
+              name: '打铁座                     180',      /*改格式！*/
               itemStyle: { color: '#10B9F8' },
             },
             {
               value: 177,
-              name: '顶棚线束',
+              name: '顶棚线束                  177',
               itemStyle: { color: '#FF6A6A' },
             },
             {
               value: 165,
-              name: 'POS机',
+              name: 'POS机                     165',
               itemStyle: { color: '#90ED7D' },
             },
             {
               value: 140,
-              name: '安全带/USB电源',
+              name: '安全带/USB电源      140',
               itemStyle: { color: '#F7A35C' },
             },
             {
               value: 120,
-              name: '车身安全带/USB',
+              name: '车身安全带/USB      120',
               itemStyle: { color: '#8085E9' },
             },
             {
               value:100,
-              name: '司机风扇',
+              name: '司机风扇                  100',
               itemStyle: { color: '#920783' },
             },
             {
               value:80,
-              name: '外推窗过渡线',
+              name: '外推窗过渡线            80',
               itemStyle: { color: '#E4D354' },
             },
             {
               value: 60,
-              name: '仪表线束',
+              name: '仪表线束                   60',
               itemStyle: { color: '#601986' },
             },
             {
               value: 40,
-              name: '阅读灯线束',
+              name: '阅读灯线束                40',
               itemStyle: { color: '#A48B78' },
             },
           ],

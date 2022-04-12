@@ -48,3 +48,20 @@ background-position:center center;
 文字:px;
 数字:em;
 */
+
+ /* text-indent:2px;*//*文字缩进*/
+    /*letter-spacing:1px;
+    line-height:1px;
+    word-spacing:10px;*/
+   /* white-space: nowrap;*//*不换行*/
+}
+/*
+@font-face{
+    font-family:myFirstFont;
+    src:url();
+    font-stretch:condensed;
+    font-style:normal;
+    font-weight: bold;
+    unicode-range:unicode-range;
+}
+*/
