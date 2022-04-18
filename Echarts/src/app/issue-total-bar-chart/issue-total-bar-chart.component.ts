@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+
 @Component({
   selector: 'app-issue-total-bar-chart',
   template: `<div id="issuetop5_bar_chart"></div>`,
@@ -14,14 +15,14 @@ export class IssueTotalBarChartComponent implements OnInit {
   }
 
   initCharts() {
-  
+ /* 
 const Icons = {  
   first:'/src/assets/images/矢量智能对象(7).png',
   second:'/src/assets/images/矢量智能对象 拷贝 5.png',
   third: '/src/assets/images/矢量智能对象 拷贝 6.png',
   fourth:'/src/assets/images/矢量智能对象 拷贝 7.png',
   fifth:'/src/assets/images/矢量智能对象 拷贝 7.png',
-};
+};*/
 
 //已排序的数据集
 const datas = [
@@ -39,6 +40,9 @@ const datasRoundup = [
   { value: '250', name: '第五班组' }
 ];
 /*
+
+
+}
 const builderJson = {
   all: 300,
   charts: {
@@ -97,8 +101,17 @@ const ec = echarts as any;
           containLabel: true
         }
       ],
-      tooltip: {},
-      dataset: {}, //重新设置[category: '第一班组',value：'?']
+    //  params.value[params.encode.y[0]]
+/*dataset:{
+dimensions:['grade','group','production'],
+source:[
+  {grade:'1',group:'第一组',production:'722'},
+  {grade:'2',group:'第二组',production:'234'},
+  {grade:'3',group:'第三组',production:'233'},
+  {grade:'4',group:'第四组',production:'344'},
+  {grade:'5',group:'第五组',production:'34'},
+]
+  }*/
     
       xAxis: [
         /*first charts*/
@@ -124,11 +137,97 @@ const ec = echarts as any;
         }
       ],
       yAxis: [
-        /*first charts*/
         {
           type: 'category',
           inverse: true,
-          data: ['1', '2', '3', '4', '5'], //固定
+          data: [
+            {
+              value:'1',
+             textStyle:{
+              width:14,
+              height:16, 
+              align:'center',
+              verticalAlign:'middle',
+              fontSize:10,
+              fontFamily:'Microsoft YaHei',
+               backgroundColor:{
+              image:'/assets/images/矢量智能对象(7).png', 
+            }}
+           },
+            {
+             value:'2',
+             textStyle:{
+              width:14,
+              height:16, 
+              align:'center',
+              verticalAlign:'middle',
+              fontSize:10,
+              fontFamily:'Microsoft YaHei',
+               backgroundColor:{image: '/assets/images/矢量智能对象 拷贝 5.png'},            
+             }
+            } , 
+            {
+              value:'3',
+              textStyle:{
+              width:14,
+              height:16, 
+             
+              align:'center',
+              verticalAlign:'middle',
+              fontSize:10,
+              fontFamily:'Microsoft YaHei',
+                backgroundColor:{image:'/assets/images/矢量智能对象 拷贝 6.png'},
+              }
+            },
+            {
+              value:'4',
+               textStyle:{
+              width:14,
+              height:16, 
+            
+              align:'center',
+              verticalAlign:'middle',
+              fontSize:10,
+              fontFamily:'Microsoft YaHei',
+               backgroundColor:{image:'/assets/images/矢量智能对象 拷贝 7.png'},
+             }
+ 
+            },
+            {
+             value:'5',
+            textStyle:{
+              width:14,
+              height:16, 
+              verticalAlign:'middle',
+              align:'center',
+              fontSize:10,
+              fontFamily:'Microsoft YaHei',
+              backgroundColor:{image:'/assets/images/矢量智能对象 拷贝 8.png'},
+            }
+ 
+           }],
+          /*data:{//类目轴数据
+           value:['1','2','3','4','5'],
+           textStyle:{
+             fontSize:10,
+             fontFamily:'Microsoft Yahei',
+             width:14,
+             height:16,
+             aglin:'center',
+             verticalAlign:'middle',
+             formatter:[
+               '{valueStyle|{value}}'
+             ],
+             rich:{
+                    function(value,index){
+                      backgroundColor:{
+                        image:'valueStyle[index]',
+                      },
+
+                    }   //valueStyle写成数组，value是一个数组，二者index相同。
+             }
+           }
+          },*/
           axisLine: {
             show: false
           },
@@ -137,52 +236,9 @@ const ec = echarts as any;
           },
           axisLabel: {
             color:'rgba(255,255,255,1)',
-            margin:105,   /*count*/
-            formatter:[
-              '{first|'+1+'}',
-              '{second|'+2+'}',
-              '{third|'+3+'}',
-              '{fourth|'+4+'}',
-              '{fifth|'+5+'}',
-            ],        /*{stylename|text} */
-             rich: {                     //icon
-                 first: {
-                    backgroundColor: {
-                      width:14,
-                      height:16,
-                      image: '/assets/images/矢量智能对象(7).png',
-                    }
-                  },
-                  second: {
-                   
-                    backgroundColor: {
-                      width:14,
-                      height:16,
-                      image: '/assets/images/矢量智能对象 拷贝 5.png',
-                    }
-                  },
-                  third: {                
-                      backgroundColor: {
-                        width:14,
-                        height:16,
-                        image: '/assets/images/矢量智能对象 拷贝 6.png',
-                    }
-                  },
-                  fourth: {
-                    backgroundColor: {
-                      width:14,
-                      height:16,
-                      image:'/assets/images/矢量智能对象 拷贝 7.png',
-                    }
-                  },
-                    fifth: {
-                    backgroundColor: {
-                      width:14,
-                      height:16,
-                      image:'/assets/images/矢量智能对象 拷贝 8.png',
-                    }
-                  }
-                  }
+            margin:103,   /*count*/ 
+            fontFamily:'Microsoft YaHei',   
+            fontSize:10,
           },
 
           splitLine: {
@@ -193,7 +249,7 @@ const ec = echarts as any;
         
         }
       ],
-    
+     
       //data: Object.keys(builderJson.charts),
     
       series: [
