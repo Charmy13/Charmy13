@@ -1,10 +1,9 @@
-import { BoundElementProperty } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 @Component({
   selector: 'app-record-gauge-chart',
   template: `<div id="record_gauge_chart" ></div>`,
-  styles:[`#record_gauge_chart { width:525px;height:115px;}`]
+  styles:[`#record_gauge_chart { width:525px;height:110px;position:absolute;top:40%;}`]
 })
 export class RecordGaugeChartComponent implements OnInit {
 
@@ -105,7 +104,7 @@ export class RecordGaugeChartComponent implements OnInit {
           color: '#E73851',
           formatter: '{value}%',/*formatter:'{b}<br/>{d}'*/
         },
-         center: ['50%', '30%'],
+         center: ['50%', '35%'],
         datasetIndex: 1
       },
       {  type: 'gauge',
@@ -158,7 +157,7 @@ export class RecordGaugeChartComponent implements OnInit {
           color: '#D1B55D',
           formatter: '{value}%'
         },
-        center: ['70%', '30%'],
+        center: ['70%', '35%'],
         datasetIndex: 2,
         
       },
@@ -212,7 +211,7 @@ export class RecordGaugeChartComponent implements OnInit {
           color: '#80C9C2',
           formatter: '{value}%'
         },
-        center: ['90%', '30%'],
+        center: ['90%', '35%'],
         datasetIndex: 3
       },
     ]

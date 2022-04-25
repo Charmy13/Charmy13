@@ -10,11 +10,16 @@ import { OrderlineChartComponent } from './order-line-chart/order-line-chart.com
 import { ProductionBarChartComponent } from './production-bar-chart/production-bar-chart.component';
 
 import { PeriodplanLineChartComponent } from './periodplan-line-chart/periodplan-line-chart.component';
-import { IssueTOP5BarChartComponent } from './issue-top5-bar-chart/issue-top5-bar-chart.component';
 import { IssueTotalBarChartComponent } from './issue-total-bar-chart/issue-total-bar-chart.component';
+
+import { IssueTop5BarChartComponent } from './issue-top5-bar-chart/issue-top5-bar-chart.component';
 import { RecordGaugeChartComponent } from './record-gauge-chart/record-gauge-chart.component';
 import { OrderListChartComponent } from './order-list-chart/order-list-chart.component';
 import { EarthComponent } from './earth/earth.component';
+
+import{ HttpClientModule} from '@angular/common/http';
+import { CommonChartComponent } from './common-chart/common-chart.component';
+
 
 @NgModule({
   declarations: [
@@ -23,16 +28,18 @@ import { EarthComponent } from './earth/earth.component';
     OrderlineChartComponent,
     ProductionBarChartComponent,
     PeriodplanLineChartComponent,
-    IssueTOP5BarChartComponent,
     IssueTotalBarChartComponent,
+    IssueTop5BarChartComponent,
     RecordGaugeChartComponent,
     OrderListChartComponent,
     EarthComponent,
+    CommonChartComponent,
   ],
   imports: [
    BrowserModule,
    AppRoutingModule,
    NgxEchartsModule,
+   HttpClientModule,
   /* NgxEchartsModule.forRoot(config:{
          echarts:()=>import('echarts','echarts-gl')
       })*/

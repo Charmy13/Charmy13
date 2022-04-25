@@ -22,8 +22,8 @@
  /*  grid-auto-columns:minmax(525px,auto);*/
   /* grid-template-rows:105px minmax(525px,auto) minmax(525px,auto);*/
    /*grid-template-rows:105px minmax(525px,auto),fit-content;*/
-   grid-template-rows:100px minmax(525px,auto),auto;
-   grid-row-gap: 20px;
+   grid-template-rows:90px minmax(475px,auto) auto;
+   grid-row-gap: 0px;
    grid-column-gap:15px;
    box-sizing:border-box;
    padding-left:56px;
@@ -32,10 +32,10 @@
 }
 .title_box{
     position:absolute;
-    top:-47%;
-    left:34.5%;
+    top:-37%;
+    left:33.5%;
     width:600px;
-    height:3.125rem;
+    height:2.8125rem;
     margin:auto;/*内部元素（块）居中对齐*/
     text-align: center;
 }
@@ -43,7 +43,7 @@
 p.title_content{
     display: inline-block;
     text-align: center;
-    font-size: 3.125rem;
+    font-size: 2.8125rem; /*font-size:45px;*/
     font-family: 'Microsoft yahei';
     font-weight: bolder;
     letter-spacing:5px;
@@ -67,9 +67,6 @@ p.title_content:before{
     position: absolute;
     
 }
-
-
-
 /*边框*/
 
 #angle{                         /*angle编译优先级大于border1优先级*/
@@ -78,12 +75,7 @@ p.title_content:before{
     box-sizing: border-box;
     filter: brightness(1.2);
 }
-#angle1{
-    width:20px; /*占整条线的10%*/
-    height:20px;
-    box-sizing: border-box;
-    filter: brightness(1.2);
-}
+
 /*
 .border1{
 box-sizing: border-box;
@@ -95,20 +87,20 @@ margin:20px;
 }*/
 
 .border1{
-    display:flex;
-   flex-direction:column;
-   justify-content:flex-start;
-   align-self:stretch;
-   width: 532px;       /*边框尺寸*/
-   height:430px;
    border:1px solid rgba(30,46,77);
    position:relative;
-   margin:20px;
+}
+.flex_eqspace{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    align-self:flex-start;
+    align-items:center;
 }
 
 div.title{
     width:90%;
-    height:15%;
+    height:2.1875rem; /* height:35px;*/
     font-size:1.125rem;
     color:#fff;
     font-family: Microsoft yahei;
@@ -116,10 +108,11 @@ div.title{
 .place{
     box-sizing: border-box;
     background-image: linear-gradient(90deg,#446cb7 0%,rgba(0,0,0,0) 100%);
-    margin:5%;
+    margin-top:3%;
+    margin-left:3%;
+    margin-bottom:3%;
     padding-top:1%;
-    padding-left:2%;
-    position:absolute;
+    padding-left:1%;
 }
 
 .angle_lt{
@@ -196,17 +189,11 @@ p.title_content{
   */
 
 .grid_item1{
-   display:flex;
-   flex-direction:column;
-   justify-content:flex-start;
-   align-self:stretch;
    width: 532px;       /*边框尺寸*/
    height:430px;
-   background:url("/assets/images/矢量智能对象2.png")  no-repeat;
-   background-size:contain;
-   background-color: RGBA(3, 20, 73, 0.4);
-   box-shadow:0 0 43px 35px RGBA(19, 49, 109,0.6) inset;  /*由于外边的颜色不能盖住边框，增加透明度会减少颜色效果，选择增加blur来替代这种不足spread取'padding' */
    box-sizing:content-box;
+   background-color: RGBA(3, 20, 73, 0.4);
+   box-shadow:0 0 53.2px 43px RGBA(19, 49, 109,0.6) inset; /*长比短：1.21 spread=10%*短  blur=长比短*spread /*由于外边的颜色不能盖住边框，增加透明度会减少颜色效果，选择增加blur来替代这种不足spread取'padding' */
    /*grid-column:1/2;*/
 
 }
@@ -233,21 +220,18 @@ position:relative;  /*地球父级元素*/
 }
 
 .grid_item3{
-display:flex;
-flex-direction:column;
+
 flex-wrap:nowrap;
-/*justify-content:space-between;*/
 align-items:baseline;
 width:525px;
-height:430px;
+height:490px;
+/*position:realtive ;*/
 }
 .item3_1{
-    background-image:url("/assets/images/右下边框.png");
-    background-repeat:no-repeat;
-    background-size:100% 100%;
     width:525px;
-    height:115px;
+    height:130px;
     background-color:RGBA(3, 20, 73, 0.4);
+   /*box-shadow:0 0 calc(calc(var(--gd-width)/var(--gd-height))*calc(var(--gd-height)*10%)) calc(var(--gd-height)*10%) RGBA(19, 49, 109, 0.6) inset;/*宽高比4.56 spread=10%*height  blur=长比短/2*spread*/
     box-shadow:0 0 26.22px 11.5px RGBA(19, 49, 109, 0.6) inset;/*宽高比4.56 spread=10%*height  blur=长比短/2*spread*/
     position: relative;
     }
@@ -255,11 +239,8 @@ height:430px;
 .item3_2{
     width:525px;
     height:115px;
-    background-image:url("/assets/images/右下边框.png");
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-    margin-top:25px;
-    margin-bottom:25px;
+   /* margin-top:20px;
+    margin-bottom:20px;*/
    box-sizing: content-box;
    background-color: RGBA(3, 20, 73, 0.4);
    box-shadow:0 0 26.22px 11.5px RGBA(19, 49, 109, 0.6) inset;/*宽高比4.56 spread=10%（长比短太大了只能选择内边距对齐为标准，当为13%刚好对齐)*短  blur=1.5*spread*/
@@ -298,21 +279,18 @@ div.task img{
   padding-right: 8px;
 }
 
-    .item3_3{
-    background-image:url("/assets/images/右下边框.png");
-    background-repeat: no-repeat;
-    background-size:100% 100%;
+.item3_3{
     width:525px;
-    height:180px;
+    height:210px;
     background-color: RGBA(3, 20, 73, 0.4);
     box-shadow:0 0 52px 19px RGBA(19, 49, 109, 0.6) inset;/*长比短2.76 spread=10%*短  blur=长比短2.76*spread*/
     box-sizing: content-box;
-    
-    }
+    position: relative; 
+ }
 .total{
     display: inline-block;
     position:absolute;
-    top:25%;
+    top:45%;
     left:6%;
     z-index:1;
     font-size:2.625em;   /*90px*/
@@ -326,55 +304,47 @@ i{
 font-size:0.7em;   
 font-weight: bold;
 }
+
 .grid_item4{
-height:425px;
+height:475px;
 width:532px;
-background-image:url("/assets/images/矢量智能对象2.png") ;
-background-repeat: no-repeat;
-background-size: 100% 100%;
 background-color: RGBA(3, 20, 73, 0.4);
 box-shadow:0 0 42.45px 34.8px RGBA(19, 49, 109, 0.6) inset;/*spread=短比长8%*height  blur=长比短1.22*spread*/
-display:flex;
-flex-direction:column;
-/*justify-content: space-between;*/
-margin-top:-50px;
+margin-top:-20px;  /*设置为可变列长 的grid应该去掉*/
+
 }
 
 .grid_item5{
 display:flex;
 flex-direction:column;
+align-items: flex-start;
+justify-content: space-evenly;
 height:380px;
 width:637px;
-padding-top: 35px;
-padding-left:45px;
-padding-right:20px;
-}
+box-sizing: border-box;
+margin:16% 5% 0px;
+padding:0px;
+position:relative;
 
-.grid_item6{
-display:flex;
-flex-direction:column;
-height:430px;
-width:532px;
 }
 
 
 
 .item7{
-  display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-    background-image:url("/assets/images/矢量智能对象2.png");
-    background-repeat: no-repeat;
-    background-size:100% 100%;
     width:617px;
     height:312px;
+    box-sizing:content-box;
     background-color: RGBA(3, 20, 73, 0.4);
     box-shadow:0 0 56px 28px  RGBA(19, 49, 109, 0.6) inset;/*长比短2.20 spread=10%*短  blur=长比短2.20*spread*/
+    position:relative;
     }
+#column-chart{
+    width: 617px;  /*和容器宽度一致*/
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items:flex-end;
 
-div.item7>div{
-    display:inline-block;
-    text-align: center;
 }
 
 div.item7_1{
@@ -382,17 +352,15 @@ div.item7_1{
     background-size: contain;
     width:100px;
     height:168px;
-    position: relative;
-    top:31%;
-    margin-left: 20px;
+   
 }
 div.item7_2{
+   
     background:url("/assets/images/圆柱体2.png") no-repeat;
     background-size: contain;
     width:100px;
     height:183px;
-    position: relative;
-    top:26%;
+   
   
 }
 div.item7_3{
@@ -400,16 +368,14 @@ div.item7_3{
     background-size: contain;
     width:100px;
     height:207px;
-    position: relative;
-    top:20%;
+    
 }
 div.item7_4{
     background:url("/assets/images/圆柱体1.png") no-repeat;
     background-size: contain;
     width:100px;
     height:187px;
-    position: relative;
-    top:26%;
+    
  
 }
 div.item7_5{
@@ -417,34 +383,24 @@ div.item7_5{
     background-size: contain;
     width:99px;
     height:171px;
-    position: relative;
-    top:31%;
-    margin-right: 20px;
+   
 }
 
-
+.grid_item6{
+    height:460px;
+    width:532px;
+    justify-content: space-between;
+    }
 .item8{
-   
-    flex-direction:column;
-    background-image:url("/assets/images/右下边框.png");
-    background-repeat: no-repeat;
-    background-size:100% 100%;
     width:525px;
-    height:230px; /*temporary*/
+    height:260px; /*temporary*/
     background-color: RGBA(3, 20, 73, 0.4);
     box-shadow:0 0 52.44px 23px  RGBA(19, 49, 109, 0.6) inset; /*长比短2.28 短比长:0.43 spread=10%*短 blur=长比短*spread*/
-    margin-bottom:25px;
-    margin-top:-40px;
-    
 }
 
 .item9{
-    
-    background-image:url("/assets/images/右下边框.png");
-    background-repeat: no-repeat;
-    background-size:100% 100%;
     width:525px;
-    height:159px;
+    height:180px;
     background-color: RGBA(3, 20, 73, 0.4);
     box-shadow:0 0 26.235px 15.9px RGBA(19, 49, 109, 0.6) inset; /*长比短3.30 短比长0.303 spread=10%*短 blur=1.65*spread*/
 }
@@ -465,13 +421,14 @@ p.title{
     top:-0.5em;
 }
 div.item7 b{
-    font-size:18px;
+    font-size:1.125rem;
     font-family:Microsoft Yahei;
-    font-weight:bold;
     background:linear-gradient(to right ,#2CF3DD, #17DBEC, #06C8F9);
     background-clip: text;
-    /*-webkit-background-clip:text;*/
+    -webkit-background-clip:text;
     color:transparent;
+    display: flex;
+    justify-content:center;
 }
 
 li{
@@ -485,11 +442,6 @@ span.data{
 
 
 
-.item7  img{
-display: inline-block;
-margin-top: 10px;
-margin-left:15px;
-}
 
 @keyframes clockwise {
     from{ransform-origin:center;transform:rotateZ(0deg)}

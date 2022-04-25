@@ -1,38 +1,43 @@
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit } from '@angular/core';
+import { HttpClient } from'@angular/common/http';
 import * as echarts from 'echarts';
 
 @Component({
   selector: 'app-order-line-chart',
-  template: `<div id="order_line_chart" style="width=535px;height:230px"></div>
-
+  template: `<div id="order_line_chart"style="width:532px;height:230px"></div>
+<!--[line_chart_title]="title"-->
     <!-- <div echarts [options]="chartOption" ></div>--> `,
   styleUrls: ['./order-line-chart.component.css'],
 })
 export class OrderlineChartComponent implements OnInit {
-  //chartDom:any;
-  //chartOption:EChartOption;//什么类型？写好的么？修改一部分？重构？
-  //constructor() {
-  //let chartDom =document.getElementById('order_line_chart');
-  //}//构造函数
-  
-  constructor() {
+
+//@Input() line_chart_title:string;
+dataset:any;
+
+  constructor(private httpClient:HttpClient) {
+    this.httpClient.get('assets/json/order_line_chart.json')
+    .subscribe(data =>{
+        console.log('data....',data);
+        console.log('datajson....',JSON.stringify(data));
+        this.dataset=data;
+    });
+   
     console.log(echarts);
   }
+
   ngOnInit() {
     this.initCharts();
-
-    //echarts.init(this.chartDom).setOption(this.options)
+   
   }
   initCharts() {
-    const data=[{}];
     const ec = echarts as any;
     let linechart = ec.init(document.getElementById('order_line_chart'));
     let order_linechartOption = {
-      title: {
+     title: {
         show: true,
         text: '2021年度订单统计分析',
-        left:'center',/*距离容器左侧的宽度*/
+        left:'center',//距离容器左侧的宽度
         textStyle: {
           color: '#FFFFFF',
           fontStyle: 'normal',
@@ -60,10 +65,11 @@ export class OrderlineChartComponent implements OnInit {
           color:'rgba(255, 255, 255, 0.7)',
           fontFamily:'Microsoft YaHei',
         },
-        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月'],
+        
       },
 
-      yAxis:[ {
+      yAxis:[ 
+        {
         type: 'value',
         position: 'left',                                 /*count*/
         nameTextStyle: {
@@ -93,20 +99,19 @@ export class OrderlineChartComponent implements OnInit {
       },
     {
     type:'value',
-     name:'单位（万件）',            
+     name:'单位（万件）',           // 获取字段
      nameTextStyle:{
        align:'right',
        fontFamily:'Microsoft YaHei',
        fontSize:12,
        color: 'rgba(255, 255, 255, 0.7)',
-       
      }
     }
     ],
     
       series: [
         {
-          data: [1.7, 2.1, 4.1, 2.8, 1.9, 1.1, 1.95, 2.1, 1.85],
+          data: this.dataset,
           type: 'line',
           smooth: true,
           symbol: 'circle',
@@ -124,6 +129,7 @@ export class OrderlineChartComponent implements OnInit {
         },
       ],
     };
+    order_linechartOption.title.text=
     linechart.setOption(order_linechartOption);
   }
 }

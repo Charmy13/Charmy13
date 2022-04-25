@@ -1,138 +1,167 @@
 <!--标题-->
 <div class="grid-container">
-<div class="col-md-12">
-  <div class="title_box">
-    <p class="title_content shadow" title="新云平台数据统计分析">新云平台数据统计分析</p>
+  <div class="col-md-12">
+    <div class="title_box">
+      <p class="title_content shadow" title="新云平台数据统计分析">新云平台数据统计分析</p>
+    </div>
   </div>
-</div>
 
-<!--<div class="grid-container">!-->
+ 
 
-    <!-- <block-container [title]="订单统计" [height]="500px">
+  <!-- <block-container [title]="订单统计" [height]="500px">
       <ng-template>
         <app-earth></app-earth>
       </ng-template>
-    </block-container> -->
-    
-  
+    </block-container> 
+  -->
 
-    <!--边框-->
-    <!--
-<div class="border1">
-  <div id="angle" class="angle_lt lefttop"></div>
-  <div id="angle" class="angle_lb leftbottom"></div>
-  <div id="angle" class="angle_rt righttop"></div>
-  <div id="angle" class="angle_rb rightbottom"></div>
-  <div class="title place" title="订单统计">订单统计</div>
-   <app-order-list-chart></app-order-list-chart>
+  <!--边框-->
+
+  <div class="grid_item1 border1 flex_eqspace">
+    <div id="angle" class="angle_lt lefttop"></div>
+    <div id="angle" class="angle_lb leftbottom"></div>
+    <div id="angle" class="angle_rt righttop"></div>
+    <div id="angle" class="angle_rb rightbottom"></div>
+    <div class="title place" style="margin-left:-5% ;margin-top:1%;"title="订单统计" >{{title}}</div>
+ 
+    <!---->
+    <!--<div class="title place" style="margin:5%;padding-top:1%;padding-left:1%;position:absolute;" title="订单统计">订单统计</div>-->
+    <!--<div class="title place" style="margin-top:45% 5% 45% 5%;padding:1% 0% 0% 2%; position:absolute;" title="2021年度订单统计分析">2021年度订单统计分析</div>-->
+    <app-order-list-chart ></app-order-list-chart>
     <app-order-line-chart></app-order-line-chart>
-</div>
--->
+  </div>
 
- <div class="grid_item1">
-      <p class="title">订单统计</p>
-     <app-order-list-chart></app-order-list-chart>
-       <app-order-line-chart></app-order-line-chart>
-    </div>
+  <!--地球 s中心-->
+  <div class="grid_item2">
+    <app-earth></app-earth>
+  </div>
 
-    
 
-    <!--地球 s中心-->
-    <div class="grid_item2">
-    
-      <app-earth></app-earth>
-     
-    </div>
 
-  
-
-  <div class="grid_item3">
-
-    
+  <div class="grid_item3 flex_eqspace ">
     <!--产品记录-->
-    <div class="item3_1">
-      <p class="title">产品记录</p>
-      <span  class="total">99.3<i style="font-size:0.7em; font-style:normal;font-family:'Microsoft Yahei Bold';">%</i> </span>
+    <div class="item3_1  border1 ">
+      <div id="angle" class="angle_lt lefttop"></div>
+      <div id="angle" class="angle_lb leftbottom"></div>
+      <div id="angle" class="angle_rt righttop"></div>
+      <div id="angle" class="angle_rb rightbottom"></div>
+<div class="title place" title="产品记录">产品记录</div>
+      <!--获取容器的宽高后，能够传给border组件宽高-->
+      <!--<p class="title">产品记录</p>-->
+      <span class="total">99.3<i style="font-size:0.7em; font-style:normal;font-family:'Microsoft Yahei Bold';">%</i>
+      </span>
       <app-record-gauge-chart></app-record-gauge-chart>
     </div>
     <!--生产任务-->
-    <div class="item3_2">
-      <p class="title">生产任务</p>
+    <div class="item3_2 border1">
+      <div id="angle" class="angle_lt lefttop"></div>
+      <div id="angle" class="angle_lb leftbottom"></div>
+      <div id="angle" class="angle_rt righttop"></div>
+      <div id="angle" class="angle_rb rightbottom"></div>
+      <div class="title place"  title="生产任务">生产任务</div>
       <div class="task">
-        
+
         <div>
-           <img src='/assets/images/矢量智能对象(3).png'>
-           <p>我的处理</p><span class="data_block">2688</span> 件 <!--数字和文字有空格-->
+          <img src='/assets/images/矢量智能对象(3).png'>
+          <p>我的处理</p><span class="data_block">2688</span> 件
+          <!--数字和文字有空格-->
         </div>
 
-        <div >
-            <img src='/assets/images/矢量智能对象(4).png'>
-            <p>处理完成</p><span class="data_block">2788</span> 件
+        <div>
+          <img src='/assets/images/矢量智能对象(4).png'>
+          <p>处理完成</p><span class="data_block">2788</span> 件
         </div>
-          <div >
+
+        <div>
           <img src='/assets/images/矢量智能对象(5).png'>
-          <p>未达产品码</p> <span class="data_block">1323</span> 件 
-            
+          <p>未达产品码</p> <span class="data_block">1323</span> 件
         </div>
-        <div >
+
+        <div>
           <img src="/assets/images/矢量智能对象(6).png">
-          <p> 其他</p><span class="data_block">8888</span> 件 
+          <p> 其他</p><span class="data_block">8888</span> 件
         </div>
+
       </div>
-    
-     
+
+
     </div>
     <!--生产展示-->
-    <div class="item3_3">
-      <p  class="title">生产展示</p>
+    <div class="item3_3 border1">
+      <div id="angle" class="angle_lt lefttop"></div>
+      <div id="angle" class="angle_lb leftbottom"></div>
+      <div id="angle" class="angle_rt righttop"></div>
+      <div id="angle" class="angle_rb rightbottom"></div>
+      <div class="title place" title="生产展示">生产展示</div>
       <app-production-bar-chart></app-production-bar-chart>
     </div>
 
   </div>
 
- 
-    <!--订单数量-->
-    <div class="grid_item4">
-      <p class="title" >订单数量</ p>
-      <app-issue-total-bar-chart></app-issue-total-bar-chart>
-      <app-issue-top5-bar-chart></app-issue-top5-bar-chart>
-    </div>
 
- <div class="grid_item5">
-  <p class="title" style="position:relative;top:5%">各车间生产统计</p>
+  <!--订单数量-->
+  <div class="grid_item4 border1 flex_eqspace">
+    <div id="angle" class="angle_lt lefttop"></div>
+    <div id="angle" class="angle_lb leftbottom"></div>
+    <div id="angle" class="angle_rt righttop"></div>
+    <div id="angle" class="angle_rb rightbottom"></div>
+    <div class="title place" style="margin-left:-5%;margin-top:0;margin-bottom: 3%;"title="订单数量">订单数量</div>
+    <app-issue-top5-bar-chart></app-issue-top5-bar-chart>
+    <app-issue-total-bar-chart></app-issue-total-bar-chart>
+  </div>
+
+  <div class="grid_item5 ">
+
     <!--各车间生产统计-->
-    <div class="item7">
-      <div class="item7_1">
-        <b>一车间</b>
+    <div class="item7 flex_eqspace border1">
+      <div id="angle" class="angle_lt lefttop"></div>
+      <div id="angle" class="angle_lb leftbottom"></div>
+      <div id="angle" class="angle_rt righttop"></div>
+      <div id="angle" class="angle_rb rightbottom"></div>
+      <div class="title place" style="margin-left:-5%;margin-top:0;margin-bottom:3%;"title="各车间生产统计">各车间生产统计</div>
+      <!--<div class="title place" style="margin-top:3%;padding-top:1%;padding-left:1%;" title="各车间生产统计">各车间生产统计</div>-->
+      <div id="column-chart">
+        <div class="item7_1">
+          <b>一车间</b>
+        </div>
+        <div class="item7_2">
+          <b>一车间</b>
+        </div>
+        <div class="item7_3">
+          <b>一车间</b>
+        </div>
+        <div class="item7_4">
+          <b>一车间</b>
+        </div>
+        <div class="item7_5">
+          <b>一车间</b>
+        </div>
       </div>
-      <div class="item7_2">
-       <b>一车间</b>
-      </div>
-      <div class="item7_3">
-        <b>一车间</b>
-      </div>
-      <div class="item7_4"> 
-        <b>一车间</b>
-      </div>
-      <div  class="item7_5">
-        <b>一车间</b>
-    </div>
     </div>
   </div>
-  
 
-<div class="grid_item6">
+
+  <div class="grid_item6  flex_eqspace">
     <!--生产产品统计-->
 
-    <div class="item8">
-      <p class="title">生产产品统计</p>
+    <div class="item8 border1 ">
+      <div id="angle" class="angle_lt lefttop"></div>
+      <div id="angle" class="angle_lb leftbottom"></div>
+      <div id="angle" class="angle_rt righttop"></div>
+      <div id="angle" class="angle_rb rightbottom"></div>
+      <div class="title place"   title="生产产品统计">生产产品统计</div>
       <app-piechart></app-piechart>
     </div>
 
 
     <!--周期计划管理-->
-    <div class="item9">
-      <p class="title">周期计划管理</p>
+    <div class="item9 border1 ">
+
+      <div id="angle" class="angle_lt lefttop"></div>
+      <div id="angle" class="angle_lb leftbottom"></div>
+      <div id="angle" class="angle_rt righttop"></div>
+      <div id="angle" class="angle_rb rightbottom"></div>
+      <div class="title place"   title="周期计划管理">周期计划管理</div>
       <app-periodplan-line-chart></app-periodplan-line-chart>
     </div>
   </div>

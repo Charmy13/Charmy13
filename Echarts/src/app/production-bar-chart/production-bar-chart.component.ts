@@ -45,8 +45,8 @@ export class ProductionBarChartComponent implements OnInit {
       },
       grid: {/*直角坐标系大小*/
        width: '440', /*和容器大小(不如)有区别*/
-       height: '128',
-       top:'13%',
+       height: '130',
+       top:'15%',
        left:'8%',
         containLabel: true,
         

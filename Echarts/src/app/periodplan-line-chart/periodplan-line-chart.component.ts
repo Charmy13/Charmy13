@@ -3,7 +3,7 @@ import * as echarts from 'echarts';
 @Component({
   selector: 'app-periodplan-line-chart',
   template: `<div id="periodplan_line_chart"></div>`,
-  styles: [`#periodplan_line_chart{width:525px;height:159px;}`],
+  styles: [`#periodplan_line_chart{width:525px;height:130px;}`],
 })
 export class PeriodplanLineChartComponent implements OnInit {
   constructor() {}
@@ -121,8 +121,8 @@ export class PeriodplanLineChartComponent implements OnInit {
       grid: {
         width: 440,
         height:85,
-        top: '5%',
-        left:'9%',
+        top:'10%',
+        left:'10%',
        
       },
       xAxis: {

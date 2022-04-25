@@ -15,7 +15,7 @@
 
 /*
 z轴垂直屏幕，x轴水平方向，y轴垂直于x轴
-设置为x旋转时，可以尝试 当前块元素的perpective：400px，=》“透视效果”
+设置为x旋转时，可以尝试 当前块元素的perpective：s400px，=》“透视效果”
 transform:rotateX(90deg);
 transform:rotateY();
 transform:rotateZ(1turn);
@@ -54,7 +54,7 @@ background-position:center center;
     line-height:1px;
     word-spacing:10px;*/
    /* white-space: nowrap;*//*不换行*/
-}
+
 /*
 @font-face{
     font-family:myFirstFont;
@@ -65,3 +65,5 @@ background-position:center center;
     unicode-range:unicode-range;
 }
 */
+
+
