@@ -1,0 +1,149 @@
+#outside{
+    width:488px;
+    height:487px;
+   /*border:3px solid red;*/
+    position:absolute;
+    left:15%;
+    top:6%;
+    z-index:1;
+    animation:clockwise 15s infinite linear;
+    transform-origin:center;
+}
+ circle{
+     /*stroke:url("#myGradient");*/
+     stroke:#166689;
+     fill:transparent;
+     stroke-width:5px;
+ }
+
+.dashed{
+stroke-dasharray: 20,14;
+}
+
+div.center_title{
+    position:absolute;
+    top:40%;     /*用px*/
+    left:40%;
+    text-align: center;
+    z-index:1;
+}
+h2{
+    color:white ;
+    font-size:2.125em;
+    font-family:'Microsoft Yahei';
+    margin:0;
+}
+
+
+p{
+    /*color:black;*/
+    text-shadow:0px 11px 5px rgba(0, 0, 0, 0.5);
+    font-Size:6.875em;
+    font-family:DIN-Condensed-Bold-2; /*父元素是grid_item2*/
+    position:absolute;
+    top: -165%;
+    left:-11.5%;
+}
+p:before{
+    content:'4800';
+    background:linear-gradient(180deg,#22d0e5 25% ,#2cf4d1 55%);/*priority*/
+    background-clip:text;
+    color:transparent;
+    text-shadow: none;
+    margin:0;
+    position:absolute;
+}
+
+/*
+p:before{
+   content:attr(total);
+    background-clip:text;
+    color:transparent;
+    background:linear-gradient(180deg,#22d0e5 25% ,#2cf4d1 55%);
+    font-Size:6.875em;
+    font-family:DIN-Condensed-Bold-2;
+    text-shadow: none;
+    margin:0;
+    position:absolute;
+}
+*/
+
+#inside{
+	width:440px;
+	height:440px;
+	border:5px solid rgba(0,251,255,0.2);
+	border-radius:50%;
+	background-color:transparent;
+	box-shadow:0 0 75px 15px rgba(0,195,173,0.2) inset;
+    position:absolute;
+    left:18%;
+    top:9.5%;
+    z-index:1;
+    animation:anti-clockwise 15s infinite linear;
+    transform-origin:center ;
+
+}/*75px*/
+
+#earth{
+   width:370px;
+   height:370px;
+    position:absolute;
+    top:17.5%;
+    left:24%;
+    z-index:1;
+   
+}
+
+#triangle{
+	width:0;
+	height:0;
+	border-style:solid;
+	border-width:0 9px 16px ;
+	border-color: transparent transparent #00ffff;
+	position:relative;
+	}
+	#triangle:before{
+    width:0;
+    height:0;
+	content:'';
+	border-style: solid;
+	border-width:0 3.5px 6px;
+	border-color:transparent transparent RGBA(0, 25, 70, 1);
+	position:absolute;
+	top:6.5px;
+	left:-3.5px;
+	}
+    .lefttop{
+        position:absolute;
+        top:20%;
+        left:15%;
+        transform:rotate(-45deg);
+        }
+     .leftbottom{
+        position:absolute;
+        top:70%;
+        left:15%;
+        transform:rotate(-135deg);
+        }
+    .righttop{
+        position:absolute;
+        top:16%;
+        left:80%;
+        transform:rotate(45deg);
+        }
+    .rightbottom{
+        position:absolute;
+        top:66%;
+        left:80%;
+        transform:rotate(135deg);
+        }
+
+@keyframes clockwise {
+    from{transform-origin:center;transform:rotateZ(0deg)}
+    to{transform:rotateZ(360deg);}
+}/*3D*/
+
+@keyframes anti-clockwise{
+    from{transform:rotate3d(0,0,1,0deg);}
+    to{transform:rotate3d(0,0,1,-360deg);}
+}/*2D*/

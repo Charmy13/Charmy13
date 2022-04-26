@@ -1,0 +1,18 @@
+<div class="order_list">
+    <!--<ul class="order_listcol1">
+      <li>今日受理 : <span class="data">1659</span></li>
+      <li>累计受理 : <span class="data">18800</span></li>
+    </ul>
+    <ul class="order_listcol2">
+      <li>今日办结 : <span class="data">1519</span></li>
+      <li>累计办结 : <span class="data">16059</span></li>
+    </ul>
+    <ul class="order_listcol3">
+      <li>办结率 : <span class="data">98.26%</span></li>
+      <li>办结率 : <span class="data">97.26%</span></li>
+    </ul>
+  -->
+    <ul *ngFor="let item of dataset;" class="order_listcol1">
+        <li>{{item.key}}<span class="data">{{item.value}}</span></li>
+    </ul>
+  </div>
