@@ -19,6 +19,13 @@ import { EarthComponent } from './earth/earth.component';
 
 import{ HttpClientModule} from '@angular/common/http';
 import { CommonChartComponent } from './common-chart/common-chart.component';
+import { EditChartComponent } from './edit-chart/edit-chart.component';
+import {CardModule} from 'primeng/card';
+import {DropdownModule} from 'primeng/dropdown';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {ListboxModule} from 'primeng/listbox';
+import {InputTextModule} from 'primeng/inputtext';
+import {MenuModule} from 'primeng/menu';
 
 
 @NgModule({
@@ -34,15 +41,21 @@ import { CommonChartComponent } from './common-chart/common-chart.component';
     OrderListChartComponent,
     EarthComponent,
     CommonChartComponent,
+    EditChartComponent,
   ],
   imports: [
    BrowserModule,
    AppRoutingModule,
    NgxEchartsModule,
    HttpClientModule,
-  /* NgxEchartsModule.forRoot(config:{
-         echarts:()=>import('echarts','echarts-gl')
-      })*/
+   CardModule,
+   DropdownModule,
+   RadioButtonModule,
+   ListboxModule,
+  InputTextModule,
+  MenuModule,
+
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

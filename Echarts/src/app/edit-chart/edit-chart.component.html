@@ -1,0 +1,110 @@
+
+    <!--双向数据绑定 获取表单的值-->
+    
+    <!--统计方式-->
+    <div class="card">
+        <h5>数据来源</h5>
+        <p-menu #datalist [model]="dataselect" (click)="datalist.show($event)">
+    
+          如果选中就显示这一个被选中的数据  查询数组第一维度字段 
+        </p-menu> 
+       <label for="field">数据来源(列表  鼠标点击  查询 数组第一维度字段  压入"input data" 统计字段_数组 遍历数组 )</label>
+    
+       <label for="field">统计字段(tabel、多选 鼠标点击 )</label>
+        <p-listbox [options]="field" [(ngModel)]="selectedfield" optionLabel="name" [style]="{'width':'10rem'}"></p-listbox>
+    
+        
+        <div class="field grid">
+          <label for="dimension">维 度</label>
+          <div class="col-12 md:col-10">
+            <input id="dimension" type="text" class="inputfield w-full"  pInputText [(ngModel)]="dimension" placeholder="选择几个？维度" required>
+            <span class="p-ml-2">{{dimension}}</span>
+          </div>
+        </div>
+          <div class="field grid">
+            <label for="index" >指 标</label>
+            <div class="col-12 md:col-10">
+              <input id="index" type="text" class="inputfield w-full"  pInputText [(ngModel)]="index" placeholder="选择几个？指标" required>
+              <span class="p-ml-2">{{index}}</span>
+            </div>
+         </div>
+         <div class="field grid">
+         <label for="indicators">计算方法</label>
+          <p-dropdown [options]="indicators" [(ngModel)]="selected" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="计算方法" >
+            <ng-template pTemplate="selectedItem">
+               <div class="country-item country-item-value"  *ngIf="selected">
+                    <div>{{selected.name}}</div>
+                </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+                <div class="country-item">
+        
+                    <div>{{country.name}}</div>
+                </div>
+                
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <div class="field grid">
+          <label>图 表</label>
+          <div *ngFor="let chartOption of graph">
+            <p-radioButton  name="chartOption" [value]="chartOption" [(ngModel)]="graphOption"></p-radioButton>
+            <label [for]="chartOption">{{chartOption.name}}</label>
+          </div>
+        </div>
+        
+      
+      </div>
+    
+        
+    
+         
+    
+          
+    
+    
+          
+      
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+      <!--图表编辑区-->
+    <!--<div>
+          <span>图表名称</span>
+          <input #title  type="text"  [(ngModel)]="title" placeholder="图表名称"/>
+    
+          <h5>x轴</h5>
+          <input  #yAxisName type="text" [(ngModel)]="yAxisName" placeholder="y轴名称"/>
+         
+          <h5>y轴</h5>
+         <input #xAxisName type="text" [(ngModel)]="xAxisName" placeholder="x轴名称"/>
+         
+         <h5>  </h5>
+      </div>
+    -->
+    
+    <!--
+      <label *ngFor="let chart_Opiton of chartOptions">
+          <div>
+            <input type ="radio" name="chartOption" [(ngModel)]="chartOption" [value]="chart_Opiton">{{chart_Opiton.type}}
+          </div>
+      </label>
+      
+      <div [ngSwitch]="chartOption.type">
+        <app-issue-top5-bar-chart *ngSwitchCase="'issue-top5-bar-chart'"></app-issue-top5-bar-chart>
+        <app-order-line-chart *ngSwitchCase="'order-line-chart'"></app-order-line-chart>
+        <app-piechart *ngSwitchCase="'piechart'"></app-piechart>
+      </div>
+        -->
+    
+    
+    
+    
